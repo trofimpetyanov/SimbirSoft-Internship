@@ -13,9 +13,14 @@
 		816525B5285DFA78005838A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816525B3285DFA78005838A6 /* Main.storyboard */; };
 		816525B7285DFA79005838A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 816525B6285DFA79005838A6 /* Assets.xcassets */; };
 		816525BA285DFA79005838A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816525B8285DFA79005838A6 /* LaunchScreen.storyboard */; };
+		816525C4285DFBDE005838A6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 816525C3285DFBDE005838A6 /* Podfile */; };
+		85DC4C112C55EB136D12F862 /* Pods_Block_1___SimbirSoft_Internship.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42688A6531E858530DD5B869 /* Pods_Block_1___SimbirSoft_Internship.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0982C9E3AFC6899A67250447 /* Pods-Block 1 – SimbirSoft Internship.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Block 1 – SimbirSoft Internship.release.xcconfig"; path = "Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship.release.xcconfig"; sourceTree = "<group>"; };
+		14E2020FAA62B40ED7FF51AA /* Pods-Block 1 – SimbirSoft Internship.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Block 1 – SimbirSoft Internship.debug.xcconfig"; path = "Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship.debug.xcconfig"; sourceTree = "<group>"; };
+		42688A6531E858530DD5B869 /* Pods_Block_1___SimbirSoft_Internship.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Block_1___SimbirSoft_Internship.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		816525AA285DFA78005838A6 /* Block 1 – SimbirSoft Internship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Block 1 – SimbirSoft Internship.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816525AD285DFA78005838A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		816525AF285DFA78005838A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,7 @@
 		816525B6285DFA79005838A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		816525B9285DFA79005838A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		816525BB285DFA79005838A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		816525C3285DFBDE005838A6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85DC4C112C55EB136D12F862 /* Pods_Block_1___SimbirSoft_Internship.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C32168B0A715490E2D3F558 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42688A6531E858530DD5B869 /* Pods_Block_1___SimbirSoft_Internship.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		816525A1285DFA78005838A6 = {
 			isa = PBXGroup;
 			children = (
 				816525AC285DFA78005838A6 /* Block 1 – SimbirSoft Internship */,
 				816525AB285DFA78005838A6 /* Products */,
+				EA2BBD07EED20E299DACB359 /* Pods */,
+				2C32168B0A715490E2D3F558 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +80,19 @@
 				816525B6285DFA79005838A6 /* Assets.xcassets */,
 				816525B8285DFA79005838A6 /* LaunchScreen.storyboard */,
 				816525BB285DFA79005838A6 /* Info.plist */,
+				816525C3285DFBDE005838A6 /* Podfile */,
 			);
 			path = "Block 1 – SimbirSoft Internship";
+			sourceTree = "<group>";
+		};
+		EA2BBD07EED20E299DACB359 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				14E2020FAA62B40ED7FF51AA /* Pods-Block 1 – SimbirSoft Internship.debug.xcconfig */,
+				0982C9E3AFC6899A67250447 /* Pods-Block 1 – SimbirSoft Internship.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 816525BE285DFA79005838A6 /* Build configuration list for PBXNativeTarget "Block 1 – SimbirSoft Internship" */;
 			buildPhases = (
+				52D09C4059BC427B58D0BE5F /* [CP] Check Pods Manifest.lock */,
 				816525A6285DFA78005838A6 /* Sources */,
 				816525A7285DFA78005838A6 /* Frameworks */,
 				816525A8285DFA78005838A6 /* Resources */,
+				0ED5AA54FE839521A721639F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,11 +157,54 @@
 			files = (
 				816525BA285DFA79005838A6 /* LaunchScreen.storyboard in Resources */,
 				816525B7285DFA79005838A6 /* Assets.xcassets in Resources */,
+				816525C4285DFBDE005838A6 /* Podfile in Resources */,
 				816525B5285DFA78005838A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0ED5AA54FE839521A721639F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52D09C4059BC427B58D0BE5F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Block 1 – SimbirSoft Internship-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		816525A6285DFA78005838A6 /* Sources */ = {
@@ -282,6 +355,7 @@
 		};
 		816525BF285DFA79005838A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14E2020FAA62B40ED7FF51AA /* Pods-Block 1 – SimbirSoft Internship.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +385,7 @@
 		};
 		816525C0285DFA79005838A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0982C9E3AFC6899A67250447 /* Pods-Block 1 – SimbirSoft Internship.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
