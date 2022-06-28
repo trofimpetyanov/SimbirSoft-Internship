@@ -12,7 +12,6 @@
         <!--View Controller-->
         <scene sceneID="1hN-Ox-itl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RyP-fS-hJp" sceneMemberID="firstResponder"/>
                 <viewController id="s3G-Du-ETb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CbE-6d-K6y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -50,6 +49,7 @@
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RyP-fS-hJp" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="72" y="242"/>
         </scene>

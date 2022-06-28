@@ -14,13 +14,15 @@
 		816525B7285DFA79005838A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 816525B6285DFA79005838A6 /* Assets.xcassets */; };
 		816525BA285DFA79005838A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816525B8285DFA79005838A6 /* LaunchScreen.storyboard */; };
 		816525C4285DFBDE005838A6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 816525C3285DFBDE005838A6 /* Podfile */; };
+		816F50F1286B2C55007F0723 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F50F0286B2C55007F0723 /* CustomTabBarController.swift */; };
+		816F50F3286B365D007F0723 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F50F2286B365D007F0723 /* CustomTabBar.swift */; };
 		85DC4C112C55EB136D12F862 /* Pods_Block_1___SimbirSoft_Internship.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42688A6531E858530DD5B869 /* Pods_Block_1___SimbirSoft_Internship.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0982C9E3AFC6899A67250447 /* Pods-Block 1 – SimbirSoft Internship.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Block 1 – SimbirSoft Internship.release.xcconfig"; path = "Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship.release.xcconfig"; sourceTree = "<group>"; };
 		14E2020FAA62B40ED7FF51AA /* Pods-Block 1 – SimbirSoft Internship.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Block 1 – SimbirSoft Internship.debug.xcconfig"; path = "Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship.debug.xcconfig"; sourceTree = "<group>"; };
-		42688A6531E858530DD5B869 /* Pods_Block_1___SimbirSoft_Internship.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Block_1___SimbirSoft_Internship.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42688A6531E858530DD5B869 /* Pods_Block_1___SimbirSoft_Internship.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Block_1___SimbirSoft_Internship.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816525AA285DFA78005838A6 /* Block 1 – SimbirSoft Internship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Block 1 – SimbirSoft Internship.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816525AD285DFA78005838A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		816525AF285DFA78005838A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +32,8 @@
 		816525B9285DFA79005838A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		816525BB285DFA79005838A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		816525C3285DFBDE005838A6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		816F50F0286B2C55007F0723 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		816F50F2286B365D007F0723 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 				816525AF285DFA78005838A6 /* SceneDelegate.swift */,
 				816525B1285DFA78005838A6 /* ViewController.swift */,
 				816525B3285DFA78005838A6 /* Main.storyboard */,
+				816F50F0286B2C55007F0723 /* CustomTabBarController.swift */,
+				816F50F2286B365D007F0723 /* CustomTabBar.swift */,
 				816525B6285DFA79005838A6 /* Assets.xcassets */,
 				816525B8285DFA79005838A6 /* LaunchScreen.storyboard */,
 				816525BB285DFA79005838A6 /* Info.plist */,
@@ -91,7 +97,6 @@
 				14E2020FAA62B40ED7FF51AA /* Pods-Block 1 – SimbirSoft Internship.debug.xcconfig */,
 				0982C9E3AFC6899A67250447 /* Pods-Block 1 – SimbirSoft Internship.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -212,6 +217,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				816525B2285DFA78005838A6 /* ViewController.swift in Sources */,
+				816F50F3286B365D007F0723 /* CustomTabBar.swift in Sources */,
+				816F50F1286B2C55007F0723 /* CustomTabBarController.swift in Sources */,
 				816525AE285DFA78005838A6 /* AppDelegate.swift in Sources */,
 				816525B0285DFA78005838A6 /* SceneDelegate.swift in Sources */,
 			);
