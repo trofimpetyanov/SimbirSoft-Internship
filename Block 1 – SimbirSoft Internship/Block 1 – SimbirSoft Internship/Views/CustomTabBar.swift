@@ -28,7 +28,11 @@ final class CustomTabBar: UITabBar {
     
     private func circlePath() -> CGPath {
         let path = UIBezierPath()
-        path.addArc(withCenter: CGPoint(x: centerWidth, y: 12), radius: circleRadius, startAngle: 6.83 * .pi / 6, endAngle: 11.17 * .pi / 6, clockwise: true)
+        path.addArc(withCenter: CGPoint(x: centerWidth, y: 12),
+                    radius: circleRadius,
+                    startAngle: 6.83 * .pi / 6,
+                    endAngle: 11.17 * .pi / 6,
+                    clockwise: true)
         return path.cgPath
     }
     

@@ -43,7 +43,9 @@ class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HelpCategoryCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: reuseIdentifier,
+            for: indexPath) as? HelpCategoryCollectionViewCell else { return UICollectionViewCell() }
         let helpCategory = model.helpCategories[indexPath.row]
         
         cell.configureCell(with: helpCategory)
@@ -54,7 +56,10 @@ class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "helpCategoriesHeader", for: indexPath) as! HelpCategoriesCollectionHeaderView
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: "helpCategoriesHeader",
+                for: indexPath) as? HelpCategoriesCollectionHeaderView else { return UICollectionViewCell() }
             headerView.titleLabel.text = "Выберите категорию помощи"
             return headerView
         default:
