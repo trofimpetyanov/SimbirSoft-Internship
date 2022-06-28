@@ -20,13 +20,11 @@
 		816F50F7286B4328007F0723 /* HelpCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F50F6286B4328007F0723 /* HelpCategory.swift */; };
 		816F50F9286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F50F8286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift */; };
 		816F50FB286B4530007F0723 /* HelpCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F50FA286B4530007F0723 /* HelpCategoryCollectionViewCell.swift */; };
-		85DC4C112C55EB136D12F862 /* Pods_Block_1___SimbirSoft_Internship.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42688A6531E858530DD5B869 /* Pods_Block_1___SimbirSoft_Internship.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0982C9E3AFC6899A67250447 /* Pods-Block 1 – SimbirSoft Internship.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Block 1 – SimbirSoft Internship.release.xcconfig"; path = "Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship.release.xcconfig"; sourceTree = "<group>"; };
 		14E2020FAA62B40ED7FF51AA /* Pods-Block 1 – SimbirSoft Internship.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Block 1 – SimbirSoft Internship.debug.xcconfig"; path = "Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship.debug.xcconfig"; sourceTree = "<group>"; };
-		42688A6531E858530DD5B869 /* Pods_Block_1___SimbirSoft_Internship.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Block_1___SimbirSoft_Internship.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		810B3598286B519700676106 /* HelpCategoriesCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoriesCollectionHeaderView.swift; sourceTree = "<group>"; };
 		816128F5286B5C560040BBA3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		816525AA285DFA78005838A6 /* Block 1 – SimbirSoft Internship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Block 1 – SimbirSoft Internship.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +40,7 @@
 		816F50F6286B4328007F0723 /* HelpCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategory.swift; sourceTree = "<group>"; };
 		816F50F8286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoriesCollectionViewController.swift; sourceTree = "<group>"; };
 		816F50FA286B4530007F0723 /* HelpCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		81D901D7286B7AF700AD6784 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = "/Users/trofimpetanov/Documents/GitHub/Block-1-Simbirsoft-Internship/Block 1 – SimbirSoft Internship/.swiftlint.yml"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85DC4C112C55EB136D12F862 /* Pods_Block_1___SimbirSoft_Internship.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +57,6 @@
 		2C32168B0A715490E2D3F558 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				42688A6531E858530DD5B869 /* Pods_Block_1___SimbirSoft_Internship.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -71,6 +68,7 @@
 				816525AB285DFA78005838A6 /* Products */,
 				EA2BBD07EED20E299DACB359 /* Pods */,
 				2C32168B0A715490E2D3F558 /* Frameworks */,
+				81D901D7286B7AF700AD6784 /* .swiftlint.yml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -284,7 +282,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "alias swiftlint=\"/opt/homebrew/bin/swiftlint\"\n\nif swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
