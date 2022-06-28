@@ -10,13 +10,10 @@ import UIKit
 class CustomTabBarController: UITabBarController {
     private let helpButtonDiameter: CGFloat = 42
     
-    private let redColor = UIColor(red: 254 / 255, green: 116 / 255, blue: 96 / 255, alpha: 1)
-    private let greenColor = UIColor(red: 101 / 255, green: 166 / 255, blue: 54 / 255, alpha: 1)
-    
     private lazy var helpButton: UIButton = {
         let helpButton = UIButton()
         helpButton.layer.cornerRadius = helpButtonDiameter / 2
-        helpButton.backgroundColor = redColor
+        helpButton.backgroundColor = Colors.redColor
         helpButton.translatesAutoresizingMaskIntoConstraints = false
         helpButton.addTarget(self, action: #selector(helpButtonTapped), for: .touchUpInside)
         return helpButton
@@ -38,7 +35,7 @@ class CustomTabBarController: UITabBarController {
     
     @objc func helpButtonTapped() {
         selectedIndex = 2
-        helpButton.backgroundColor = greenColor
+        helpButton.backgroundColor = Colors.greenColor
     }
     
     private func setupHelpButton() {
@@ -68,9 +65,9 @@ extension CustomTabBarController: UITabBarControllerDelegate {
         let selectedIndex = self.tabBar.items?.firstIndex(of: item)
         
         if selectedIndex == 2 {
-            helpButton.backgroundColor = greenColor
+            helpButton.backgroundColor = Colors.greenColor
         } else {
-            helpButton.backgroundColor = redColor
+            helpButton.backgroundColor = Colors.redColor
         }
     }
 }
