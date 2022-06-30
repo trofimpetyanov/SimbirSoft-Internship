@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="edb-YA-L9q">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom Tab Bar Controller-->
+        <scene sceneID="xbJ-Mp-5Ow">
+            <objects>
+                <tabBarController id="edb-YA-L9q" customClass="CustomTabBarController" customModule="Block_1___SimbirSoft_Internship" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G4c-Fs-rlb" customClass="CustomTabBar" customModule="Block_1___SimbirSoft_Internship" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="AccentColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="HUi-B4-Jvp" kind="relationship" relationship="viewControllers" id="Q8o-Y9-msr"/>
+                        <segue destination="B7F-WW-Xvn" kind="relationship" relationship="viewControllers" id="KSm-om-Tef"/>
+                        <segue destination="z8S-ME-7HS" kind="relationship" relationship="viewControllers" id="8sC-cE-5Gz"/>
+                        <segue destination="zdJ-oZ-WDg" kind="relationship" relationship="viewControllers" id="QFI-bj-cv4"/>
+                        <segue destination="SZG-hb-3SO" kind="relationship" relationship="viewControllers" id="dhz-AO-8rH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WHT-wF-U8y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1416" y="26"/>
+        </scene>
+        <!--NewsScreen-->
+        <scene sceneID="aCo-7k-6UY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewsScreen" id="HUi-B4-Jvp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Новости" image="list.bullet" catalog="system" id="9rU-VO-the"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0GD-ZB-Lub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2052" y="443"/>
+        </scene>
+        <!--HelpScreen-->
+        <scene sceneID="z1w-G2-sI0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HelpScreen" id="z8S-ME-7HS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Помочь" id="eO3-5T-0dq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pmM-xM-hMA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1417" y="443"/>
+        </scene>
+        <!--HistoryScreen-->
+        <scene sceneID="QTk-aT-9HE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HistoryScreen" id="zdJ-oZ-WDg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="История" image="clock.arrow.circlepath" catalog="system" id="XZT-Zm-Lfd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4aI-YF-lKZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1105" y="443"/>
+        </scene>
+        <!--ProfileScreen-->
+        <scene sceneID="DZf-uh-526">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProfileScreen" id="SZG-hb-3SO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Профиль" image="person.crop.circle" catalog="system" id="9iL-fh-EZ4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UZv-TF-9SF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-796" y="443"/>
+        </scene>
+        <!--SearchScreen-->
+        <scene sceneID="zKK-tG-Ggb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchScreen" id="B7F-WW-Xvn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Поиск" image="magnifyingglass" catalog="system" id="9iV-Ln-Gzq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bx6-eo-9ku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1736" y="443"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="clock.arrow.circlepath" catalog="system" width="128" height="110"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="AccentColor">
+            <color red="0.39800000190734863" green="0.65100002288818359" blue="0.210999995470047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
