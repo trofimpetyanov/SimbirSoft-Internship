@@ -13,7 +13,6 @@
 		814B8855286DA62E00B03EA4 /* SearchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B8854286DA62E00B03EA4 /* SearchScreen.storyboard */; };
 		814B8857286DA64F00B03EA4 /* HistoryScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B8856286DA64F00B03EA4 /* HistoryScreen.storyboard */; };
 		814B8859286DA67200B03EA4 /* ProfileScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B8858286DA67200B03EA4 /* ProfileScreen.storyboard */; };
-		816128F6286B5C560040BBA3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816128F5286B5C560040BBA3 /* Colors.swift */; };
 		816525AE285DFA78005838A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816525AD285DFA78005838A6 /* AppDelegate.swift */; };
 		816525B0285DFA78005838A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816525AF285DFA78005838A6 /* SceneDelegate.swift */; };
 		816525B5285DFA78005838A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816525B3285DFA78005838A6 /* Main.storyboard */; };
@@ -25,6 +24,8 @@
 		816F50F7286B4328007F0723 /* HelpCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F50F6286B4328007F0723 /* HelpCategory.swift */; };
 		816F50F9286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F50F8286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift */; };
 		816F50FB286B4530007F0723 /* HelpCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F50FA286B4530007F0723 /* HelpCategoryCollectionViewCell.swift */; };
+		81917F6D286DA99A00057891 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81917F6C286DA99A00057891 /* UIColor+CustomColors.swift */; };
+		81917F6F286DAB4100057891 /* AppearanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +37,6 @@
 		814B8854286DA62E00B03EA4 /* SearchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchScreen.storyboard; sourceTree = "<group>"; };
 		814B8856286DA64F00B03EA4 /* HistoryScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryScreen.storyboard; sourceTree = "<group>"; };
 		814B8858286DA67200B03EA4 /* ProfileScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileScreen.storyboard; sourceTree = "<group>"; };
-		816128F5286B5C560040BBA3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		816525AA285DFA78005838A6 /* Block 1 – SimbirSoft Internship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Block 1 – SimbirSoft Internship.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816525AD285DFA78005838A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		816525AF285DFA78005838A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +50,8 @@
 		816F50F6286B4328007F0723 /* HelpCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategory.swift; sourceTree = "<group>"; };
 		816F50F8286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoriesCollectionViewController.swift; sourceTree = "<group>"; };
 		816F50FA286B4530007F0723 /* HelpCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		81917F6C286DA99A00057891 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
+		81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConfigurator.swift; sourceTree = "<group>"; };
 		81D901D7286B7AF700AD6784 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = "/Users/trofimpetanov/Documents/GitHub/Block-1-Simbirsoft-Internship/Block 1 – SimbirSoft Internship/.swiftlint.yml"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -109,13 +111,21 @@
 				81D901CB286B622700AD6784 /* Models */,
 				81D901CC286B623D00AD6784 /* Views */,
 				81D901CE286B626300AD6784 /* ViewControllers */,
+				81917F6B286DA93800057891 /* Extensions */,
 				81D901CD286B625900AD6784 /* Service */,
-				816525AD285DFA78005838A6 /* AppDelegate.swift */,
 				814B884F286DA4D500B03EA4 /* Storyboards */,
 				81D901D0286B628D00AD6784 /* Resources */,
 				816525BB285DFA79005838A6 /* Info.plist */,
 			);
 			path = "Block 1 – SimbirSoft Internship";
+			sourceTree = "<group>";
+		};
+		81917F6B286DA93800057891 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				81917F6C286DA99A00057891 /* UIColor+CustomColors.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		81D901CB286B622700AD6784 /* Models */ = {
@@ -138,8 +148,8 @@
 		81D901CD286B625900AD6784 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				816128F5286B5C560040BBA3 /* Colors.swift */,
 				816F50F4286B4209007F0723 /* DataManager.swift */,
+				81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -165,6 +175,7 @@
 		81D901D0286B628D00AD6784 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				816525AD285DFA78005838A6 /* AppDelegate.swift */,
 				816525AF285DFA78005838A6 /* SceneDelegate.swift */,
 				816525B8285DFA79005838A6 /* LaunchScreen.storyboard */,
 				816525B6285DFA79005838A6 /* Assets.xcassets */,
@@ -319,13 +330,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				816128F6286B5C560040BBA3 /* Colors.swift in Sources */,
 				816F50FB286B4530007F0723 /* HelpCategoryCollectionViewCell.swift in Sources */,
 				816F50F9286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift in Sources */,
 				816F50F5286B4209007F0723 /* DataManager.swift in Sources */,
 				816F50F3286B365D007F0723 /* CustomTabBar.swift in Sources */,
 				816F50F1286B2C55007F0723 /* CustomTabBarController.swift in Sources */,
+				81917F6F286DAB4100057891 /* AppearanceConfigurator.swift in Sources */,
 				810B3599286B519700676106 /* HelpCategoriesCollectionHeaderView.swift in Sources */,
+				81917F6D286DA99A00057891 /* UIColor+CustomColors.swift in Sources */,
 				816525AE285DFA78005838A6 /* AppDelegate.swift in Sources */,
 				816525B0285DFA78005838A6 /* SceneDelegate.swift in Sources */,
 				816F50F7286B4328007F0723 /* HelpCategory.swift in Sources */,

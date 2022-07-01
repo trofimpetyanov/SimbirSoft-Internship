@@ -7,9 +7,9 @@
 
 import UIKit
 
-private let reuseIdentifier = "helpCategoryCell"
-
 class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    private static let reuseIdentifier = "helpCategoryCell"
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     private lazy var flowLayout: UICollectionViewFlowLayout = {
@@ -23,13 +23,7 @@ class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource
         return flowLayout
     }()
     
-    struct Model {
-        var helpCategories: [HelpCategory] {
-            DataManager.shared.helpCategories
-        }
-    }
-    
-    var model = Model()
+    let helpCategories: [HelpCategory] = DataManager.shared.helpCategories
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +33,14 @@ class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource
     
     // MARK: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DataManager.shared.helpCategories.count
+        return helpCategories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: reuseIdentifier,
+            withReuseIdentifier: HelpCategoriesViewController.reuseIdentifier,
             for: indexPath) as? HelpCategoryCollectionViewCell else { return UICollectionViewCell() }
-        let helpCategory = model.helpCategories[indexPath.row]
+        let helpCategory = helpCategories[indexPath.row]
         
         cell.configureCell(with: helpCategory)
         

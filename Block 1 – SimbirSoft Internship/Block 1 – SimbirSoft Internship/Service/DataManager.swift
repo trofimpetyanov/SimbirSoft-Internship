@@ -11,11 +11,11 @@ struct DataManager {
     static let shared = DataManager()
     
     var helpCategories = [
-        HelpCategory(name: "Дети", imageName: "children.pdf"),
-        HelpCategory(name: "Взрослые", imageName: "adults.pdf"),
-        HelpCategory(name: "Пожилые", imageName: "seniors.pdf"),
-        HelpCategory(name: "Животные", imageName: "animals.pdf"),
-        HelpCategory(name: "Мероприятия", imageName: "events.pdf")
+        HelpCategory(name: "Дети", imageName: "children"),
+        HelpCategory(name: "Взрослые", imageName: "adults"),
+        HelpCategory(name: "Пожилые", imageName: "seniors"),
+        HelpCategory(name: "Животные", imageName: "animals"),
+        HelpCategory(name: "Мероприятия", imageName: "events")
     ]
     
     private init() { }
