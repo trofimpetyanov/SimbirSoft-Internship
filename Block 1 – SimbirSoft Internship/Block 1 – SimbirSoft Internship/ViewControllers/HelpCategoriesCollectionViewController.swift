@@ -19,7 +19,7 @@ class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource
         flowLayout.minimumLineSpacing = 8
         flowLayout.headerReferenceSize = CGSize(width: collectionView.frame.width, height: 50)
         flowLayout.itemSize = CGSize(width: collectionView.frame.width / 2 - 24, height: collectionView.frame.width / 2 - 24)
-        flowLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
         return flowLayout
     }()
     
@@ -29,6 +29,7 @@ class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource
         super.viewDidLoad()
         
         collectionView.collectionViewLayout = flowLayout
+        collectionView.alwaysBounceVertical = true
     }
     
     // MARK: UICollectionViewDataSource
