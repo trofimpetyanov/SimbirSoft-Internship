@@ -10,6 +10,11 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OfficinaSansExtraBoldSCC.otf">
+            <string>OfficinaSansExtraBoldSCC</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Помочь-->
         <scene sceneID="9DM-ue-pN1">
@@ -40,11 +45,11 @@
                                                     <rect key="frame" x="16" y="32" width="168" height="152"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lp4-rR-7fE">
-                                                            <rect key="frame" x="16" y="0.0" width="136" height="99.5"/>
+                                                            <rect key="frame" x="16" y="0.0" width="136" height="104"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw8-CK-fMs">
-                                                            <rect key="frame" x="39" y="131.5" width="90.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="45.5" y="136" width="77.5" height="16"/>
+                                                            <fontDescription key="fontDescription" name="OfficinaSansExtraBoldSCC" family="OfficinaSansExtraBoldSCC" pointSize="16"/>
                                                             <color key="textColor" name="AccentColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -67,6 +72,7 @@
                                         <connections>
                                             <outlet property="imageView" destination="lp4-rR-7fE" id="Ey3-cF-Qkb"/>
                                             <outlet property="nameLabel" destination="qw8-CK-fMs" id="bRk-qO-lgz"/>
+                                            <segue destination="xLQ-1F-Jhs" kind="show" id="bhS-Ak-xYu"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -114,6 +120,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rcL-zE-VLM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-748" y="656"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6O4-Jy-vmj">
+            <objects>
+                <viewController id="xLQ-1F-Jhs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y4F-Mb-wrE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="OGU-SO-thU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wor-ox-0G1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EE5-PH-bWJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="653"/>
         </scene>
         <!--Помочь-->
         <scene sceneID="nly-tV-Una">

@@ -26,6 +26,7 @@
 		816F50FB286B4530007F0723 /* HelpCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F50FA286B4530007F0723 /* HelpCategoryCollectionViewCell.swift */; };
 		81917F6D286DA99A00057891 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81917F6C286DA99A00057891 /* UIColor+CustomColors.swift */; };
 		81917F6F286DAB4100057891 /* AppearanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */; };
+		81DAC545287C5635000A109E /* OfficinaSansExtraBoldSCC.otf in Resources */ = {isa = PBXBuildFile; fileRef = 81DAC544287C5635000A109E /* OfficinaSansExtraBoldSCC.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		81917F6C286DA99A00057891 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConfigurator.swift; sourceTree = "<group>"; };
 		81D901D7286B7AF700AD6784 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = "/Users/trofimpetanov/Documents/GitHub/Block-1-Simbirsoft-Internship/Block 1 – SimbirSoft Internship/.swiftlint.yml"; sourceTree = "<absolute>"; };
+		81DAC544287C5635000A109E /* OfficinaSansExtraBoldSCC.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OfficinaSansExtraBoldSCC.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,8 +181,18 @@
 				816525AF285DFA78005838A6 /* SceneDelegate.swift */,
 				816525B8285DFA79005838A6 /* LaunchScreen.storyboard */,
 				816525B6285DFA79005838A6 /* Assets.xcassets */,
+				81DAC53F287C3EAA000A109E /* Fonts */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		81DAC53F287C3EAA000A109E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				81DAC544287C5635000A109E /* OfficinaSansExtraBoldSCC.otf */,
+			);
+			name = Fonts;
+			path = ../Storyboards/Fonts;
 			sourceTree = "<group>";
 		};
 		EA2BBD07EED20E299DACB359 /* Pods */ = {
@@ -256,6 +268,7 @@
 				814B8859286DA67200B03EA4 /* ProfileScreen.storyboard in Resources */,
 				816525BA285DFA79005838A6 /* LaunchScreen.storyboard in Resources */,
 				814B8851286DA52500B03EA4 /* HelpScreen.storyboard in Resources */,
+				81DAC545287C5635000A109E /* OfficinaSansExtraBoldSCC.otf in Resources */,
 				814B8855286DA62E00B03EA4 /* SearchScreen.storyboard in Resources */,
 				814B8853286DA60600B03EA4 /* NewsScreen.storyboard in Resources */,
 				816525B7285DFA79005838A6 /* Assets.xcassets in Resources */,
