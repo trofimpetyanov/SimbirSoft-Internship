@@ -9,5 +9,6 @@ target 'Block 1 – SimbirSoft Internship' do
 
   # Pods for Block 1 – SimbirSoft Internship
   pod 'Alamofire'
+  pod 'SnapKit'
 
 end
