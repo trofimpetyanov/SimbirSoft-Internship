@@ -27,11 +27,16 @@
 		81917F6D286DA99A00057891 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81917F6C286DA99A00057891 /* UIColor+CustomColors.swift */; };
 		81917F6F286DAB4100057891 /* AppearanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */; };
 		81DAC545287C5635000A109E /* OfficinaSansExtraBoldSCC.otf in Resources */ = {isa = PBXBuildFile; fileRef = 81DAC544287C5635000A109E /* OfficinaSansExtraBoldSCC.otf */; };
+		81DAC547287CB3D6000A109E /* EventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAC546287CB3D6000A109E /* EventsCollectionViewController.swift */; };
+		81DAC54B287CB64E000A109E /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAC54A287CB64E000A109E /* EventCollectionViewCell.swift */; };
+		81DAC54D287CC5D1000A109E /* HelpEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAC54C287CC5D1000A109E /* HelpEvent.swift */; };
+		905008915877C486E5AE6DE7 /* Pods_Block_1___SimbirSoft_Internship.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A47BB5F837F2B995C76A0B3 /* Pods_Block_1___SimbirSoft_Internship.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0982C9E3AFC6899A67250447 /* Pods-Block 1 – SimbirSoft Internship.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Block 1 – SimbirSoft Internship.release.xcconfig"; path = "Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship.release.xcconfig"; sourceTree = "<group>"; };
 		14E2020FAA62B40ED7FF51AA /* Pods-Block 1 – SimbirSoft Internship.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Block 1 – SimbirSoft Internship.debug.xcconfig"; path = "Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship.debug.xcconfig"; sourceTree = "<group>"; };
+		4A47BB5F837F2B995C76A0B3 /* Pods_Block_1___SimbirSoft_Internship.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Block_1___SimbirSoft_Internship.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		810B3598286B519700676106 /* HelpCategoriesCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoriesCollectionHeaderView.swift; sourceTree = "<group>"; };
 		814B8850286DA52500B03EA4 /* HelpScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpScreen.storyboard; sourceTree = "<group>"; };
 		814B8852286DA60600B03EA4 /* NewsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +60,9 @@
 		81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConfigurator.swift; sourceTree = "<group>"; };
 		81D901D7286B7AF700AD6784 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = "/Users/trofimpetanov/Documents/GitHub/Block-1-Simbirsoft-Internship/Block 1 – SimbirSoft Internship/.swiftlint.yml"; sourceTree = "<absolute>"; };
 		81DAC544287C5635000A109E /* OfficinaSansExtraBoldSCC.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OfficinaSansExtraBoldSCC.otf; sourceTree = "<group>"; };
+		81DAC546287CB3D6000A109E /* EventsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewController.swift; sourceTree = "<group>"; };
+		81DAC54A287CB64E000A109E /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		81DAC54C287CC5D1000A109E /* HelpEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				905008915877C486E5AE6DE7 /* Pods_Block_1___SimbirSoft_Internship.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +80,7 @@
 		2C32168B0A715490E2D3F558 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A47BB5F837F2B995C76A0B3 /* Pods_Block_1___SimbirSoft_Internship.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -134,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				816F50F6286B4328007F0723 /* HelpCategory.swift */,
+				81DAC54C287CC5D1000A109E /* HelpEvent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -143,6 +154,7 @@
 			children = (
 				816F50F2286B365D007F0723 /* CustomTabBar.swift */,
 				81D901CF286B627200AD6784 /* HelpCategoriesViews */,
+				81DAC549287CB5C9000A109E /* EventsViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				816F50F0286B2C55007F0723 /* CustomTabBarController.swift */,
-				816F50F8286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift */,
+				81DAC548287CB3DE000A109E /* HelpScreen */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -193,6 +205,23 @@
 			);
 			name = Fonts;
 			path = ../Storyboards/Fonts;
+			sourceTree = "<group>";
+		};
+		81DAC548287CB3DE000A109E /* HelpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				816F50F8286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift */,
+				81DAC546287CB3D6000A109E /* EventsCollectionViewController.swift */,
+			);
+			path = HelpScreen;
+			sourceTree = "<group>";
+		};
+		81DAC549287CB5C9000A109E /* EventsViews */ = {
+			isa = PBXGroup;
+			children = (
+				81DAC54A287CB64E000A109E /* EventCollectionViewCell.swift */,
+			);
+			path = EventsViews;
 			sourceTree = "<group>";
 		};
 		EA2BBD07EED20E299DACB359 /* Pods */ = {
@@ -350,8 +379,11 @@
 				816F50F1286B2C55007F0723 /* CustomTabBarController.swift in Sources */,
 				81917F6F286DAB4100057891 /* AppearanceConfigurator.swift in Sources */,
 				810B3599286B519700676106 /* HelpCategoriesCollectionHeaderView.swift in Sources */,
+				81DAC547287CB3D6000A109E /* EventsCollectionViewController.swift in Sources */,
 				81917F6D286DA99A00057891 /* UIColor+CustomColors.swift in Sources */,
+				81DAC54B287CB64E000A109E /* EventCollectionViewCell.swift in Sources */,
 				816525AE285DFA78005838A6 /* AppDelegate.swift in Sources */,
+				81DAC54D287CC5D1000A109E /* HelpEvent.swift in Sources */,
 				816525B0285DFA78005838A6 /* SceneDelegate.swift in Sources */,
 				816F50F7286B4328007F0723 /* HelpCategory.swift in Sources */,
 			);

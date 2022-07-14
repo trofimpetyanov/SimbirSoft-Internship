@@ -11,11 +11,26 @@ struct DataManager {
     static let shared = DataManager()
     
     var helpCategories = [
-        HelpCategory(name: "Дети", imageName: "children"),
-        HelpCategory(name: "Взрослые", imageName: "adults"),
-        HelpCategory(name: "Пожилые", imageName: "seniors"),
-        HelpCategory(name: "Животные", imageName: "animals"),
-        HelpCategory(name: "Мероприятия", imageName: "events")
+        HelpCategory(id: 0, name: "Дети", imageName: "children", events: [
+            HelpEvent(
+                id: 0,
+                name: "Спонсоры отремонтируют школу-интернат",
+                description: "Дубовская школа-интернат для детей с ограниченными возможностями здоровья стала первой в области…",
+                imageName: "child",
+                startDate: Date(),
+                endDate: Date()),
+            HelpEvent(
+                id: 1,
+                name: "Конкурс по вокальному пению в детском доме №6",
+                description: "Дубовская школа-интернат для детей с ограниченными возможностями здоровья стала первой в области …",
+                imageName: "fatherAndSon",
+                startDate: Date(),
+                endDate: Date())
+        ]),
+        HelpCategory(id: 1, name: "Взрослые", imageName: "adults", events: []),
+        HelpCategory(id: 2, name: "Пожилые", imageName: "seniors", events: []),
+        HelpCategory(id: 3, name: "Животные", imageName: "animals", events: []),
+        HelpCategory(id: 4, name: "Мероприятия", imageName: "events", events: [])
     ]
     
     private init() { }

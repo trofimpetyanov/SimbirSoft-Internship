@@ -35,7 +35,7 @@ final class CustomTabBarController: UITabBarController {
     
     @objc func helpButtonTapped() {
         selectedIndex = 2
-        helpButton.backgroundColor = UIColor.greenColor
+        helpButton.backgroundColor = UIColor.leaf
     }
     
     private func setupHelpButton() {
@@ -65,7 +65,7 @@ extension CustomTabBarController: UITabBarControllerDelegate {
         let selectedIndex = self.tabBar.items?.firstIndex(of: item)
         
         if selectedIndex == 2 {
-            helpButton.backgroundColor = UIColor.greenColor
+            helpButton.backgroundColor = UIColor.leaf
         } else {
             helpButton.backgroundColor = UIColor.redColor
         }

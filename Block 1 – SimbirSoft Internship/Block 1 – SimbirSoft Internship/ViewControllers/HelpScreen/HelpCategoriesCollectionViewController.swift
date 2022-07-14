@@ -18,7 +18,7 @@ class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource
         flowLayout.minimumInteritemSpacing = 8
         flowLayout.minimumLineSpacing = 8
         flowLayout.headerReferenceSize = CGSize(width: collectionView.frame.width, height: 50)
-        flowLayout.itemSize = CGSize(width: collectionView.frame.width / 2 - 24, height: collectionView.frame.width / 2 - 24)
+        flowLayout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 24) / 2, height: (UIScreen.main.bounds.width - 24) / 2)
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
         return flowLayout
     }()
@@ -60,5 +60,12 @@ class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource
         default:
             fatalError("Unexpected element kind")
         }
+    }
+    
+    @IBSegueAction func showEvents(_ coder: NSCoder, sender: Any?) -> EventsCollectionViewController? {
+        guard let cell = sender as? HelpCategoryCollectionViewCell, let indexPath = collectionView.indexPath(for: cell)
+        else { return EventsCollectionViewController(coder: coder) }
+        
+        return EventsCollectionViewController(coder: coder, helpCategory: helpCategories[indexPath.item])
     }
 }

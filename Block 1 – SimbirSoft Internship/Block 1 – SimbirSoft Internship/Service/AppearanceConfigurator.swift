@@ -27,14 +27,14 @@ enum AppearanceConfigurator {
             
             let navigationBarAppearance = UINavigationBarAppearance()
             navigationBarAppearance.configureWithOpaqueBackground()
-            navigationBarAppearance.backgroundColor = UIColor.greenColor
+            navigationBarAppearance.backgroundColor = UIColor.leaf
             navigationBarAppearance.titleTextAttributes = titleTextAttributes
             navigationBarAppearance.buttonAppearance = barButtonItemApperanace
             
             UINavigationBar.appearance().standardAppearance = navigationBarAppearance
             UINavigationBar.appearance().scrollEdgeAppearance = UINavigationBar.appearance().standardAppearance
         } else {
-            UINavigationBar.appearance().barTintColor = UIColor.greenColor
+            UINavigationBar.appearance().barTintColor = UIColor.leaf
             UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
             UIBarButtonItem.appearance().setTitleTextAttributes(buttonTextAttributes, for: .normal)
         }
