@@ -39,7 +39,7 @@ class EventCollectionViewCell: UICollectionViewCell {
     }()
     
     lazy var separatorImageView: UIImageView = {
-        let image = UIImage(named: "separator")
+        let image = UIImage(named: "heartSeparator")
         let imageView = UIImageView()
         
         imageView.contentMode = .scaleAspectFit

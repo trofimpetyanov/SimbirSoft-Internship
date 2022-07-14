@@ -8,5 +8,7 @@
 import UIKit
 
 class HelpCategoriesCollectionHeaderView: UICollectionReusableView {
+    static let headerID = "helpCategoriesHeader"
+    
     @IBOutlet weak var titleLabel: UILabel!
 }

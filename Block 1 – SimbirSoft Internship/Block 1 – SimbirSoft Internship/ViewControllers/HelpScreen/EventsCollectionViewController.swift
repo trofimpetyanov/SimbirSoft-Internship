@@ -19,8 +19,8 @@ class EventsCollectionViewController: UICollectionViewController {
         return flowLayout
     }()
     
-    init?(coder: NSCoder, helpCategory: HelpCategory) {
-        self.helpCategory = helpCategory
+    init?(coder: NSCoder, helpEvents: [HelpEvent]) {
+        self.helpEvents = helpEvents
         super.init(coder: coder)
     }
     
@@ -28,7 +28,7 @@ class EventsCollectionViewController: UICollectionViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let helpCategory: HelpCategory
+    let helpEvents: [HelpEvent]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,17 +37,19 @@ class EventsCollectionViewController: UICollectionViewController {
         
         collectionView.collectionViewLayout = flowLayout
     }
-
+    
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return helpCategory.events.count
+        return helpEvents.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCollectionViewCell.cellID, for: indexPath) as? EventCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: EventCollectionViewCell.cellID,
+            for: indexPath) as? EventCollectionViewCell
         else { return UICollectionViewCell() }
     
-        let event = helpCategory.events[indexPath.item]
+        let event = helpEvents[indexPath.item]
     
         cell.imageView.image = UIImage(named: event.imageName)
         cell.titleLabel.text = event.name
@@ -55,5 +57,12 @@ class EventsCollectionViewController: UICollectionViewController {
         cell.dateLabel.text = "\(event.startDate)"
         
         return cell
+    }
+    
+    @IBSegueAction func showDetailEvent(_ coder: NSCoder, sender: Any?) -> DetailEventViewController? {
+        guard let cell = sender as? EventCollectionViewCell, let indexPath = collectionView.indexPath(for: cell)
+        else { return DetailEventViewController(coder: coder) }
+        
+        return DetailEventViewController(coder: coder, helpEvent: helpEvents[indexPath.row])
     }
 }
