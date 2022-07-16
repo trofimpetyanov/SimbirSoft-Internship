@@ -64,6 +64,6 @@ class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource
         guard let cell = sender as? HelpCategoryCollectionViewCell, let indexPath = collectionView.indexPath(for: cell)
         else { return EventsCollectionViewController(coder: coder) }
         
-        return EventsCollectionViewController(coder: coder, helpEvents: helpCategories[indexPath.item].events)
+        return EventsCollectionViewController(coder: coder, helpCategory: helpCategories[indexPath.row])
     }
 }

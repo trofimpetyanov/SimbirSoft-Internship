@@ -19,8 +19,9 @@ class EventsCollectionViewController: UICollectionViewController {
         return flowLayout
     }()
     
-    init?(coder: NSCoder, helpEvents: [HelpEvent]) {
-        self.helpEvents = helpEvents
+    init?(coder: NSCoder, helpCategory: HelpCategory) {
+        self.helpCategory = helpCategory
+        self.helpEvents = DataManager.shared.helpEvents.filter { helpCategory.eventsIds.contains($0.id) }
         super.init(coder: coder)
     }
     
@@ -28,11 +29,13 @@ class EventsCollectionViewController: UICollectionViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    let helpCategory: HelpCategory
     let helpEvents: [HelpEvent]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = helpCategory.name
         view.backgroundColor = .gray
         
         collectionView.collectionViewLayout = flowLayout

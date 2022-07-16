@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct HelpCategory {
+struct HelpCategory: Codable {
     let id: Int
     let name: String
     let imageName: String
-    let events: [HelpEvent]
+    let eventsIds: [Int]
 }
