@@ -33,7 +33,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         label.numberOfLines = 0
         label.font = UIFont(name: "OfficinaSansExtraBoldSCC", size: 21)
         label.textAlignment = .center
-        label.textColor = UIColor.blueGrey
+        label.textColor = UIColor.blueGray
         
         return label
     }()
@@ -118,7 +118,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         }
         
         shadowImageView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(imageView)
+            make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(imageView).inset(-4)
         }
         

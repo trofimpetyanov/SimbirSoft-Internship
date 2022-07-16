@@ -38,6 +38,12 @@ class EventsCollectionViewController: UICollectionViewController {
         collectionView.collectionViewLayout = flowLayout
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return helpEvents.count
@@ -51,15 +57,17 @@ class EventsCollectionViewController: UICollectionViewController {
     
         let event = helpEvents[indexPath.item]
     
-        cell.imageView.image = UIImage(named: event.imageName)
+        cell.imageView.image = UIImage(named: event.imageNames[0])
         cell.titleLabel.text = event.name
-        cell.descriptionLabel.text = event.description
+        cell.descriptionLabel.text = event.shortDescription
         cell.dateLabel.text = "\(event.startDate)"
         
         return cell
     }
     
     @IBSegueAction func showDetailEvent(_ coder: NSCoder, sender: Any?) -> DetailEventViewController? {
+        tabBarController?.tabBar.isHidden = true
+        
         guard let cell = sender as? EventCollectionViewCell, let indexPath = collectionView.indexPath(for: cell)
         else { return DetailEventViewController(coder: coder) }
         

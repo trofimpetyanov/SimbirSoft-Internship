@@ -32,6 +32,7 @@
 		81DAC54D287CC5D1000A109E /* HelpEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAC54C287CC5D1000A109E /* HelpEvent.swift */; };
 		81DAC57728800ECA000A109E /* DetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAC57628800ECA000A109E /* DetailEventViewController.swift */; };
 		81DAC57928803441000A109E /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAC57828803441000A109E /* PersonCollectionViewCell.swift */; };
+		81F7031B2881C32100086B03 /* DateFormatter+CustomFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7031A2881C32100086B03 /* DateFormatter+CustomFormatters.swift */; };
 		905008915877C486E5AE6DE7 /* Pods_Block_1___SimbirSoft_Internship.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A47BB5F837F2B995C76A0B3 /* Pods_Block_1___SimbirSoft_Internship.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		81DAC54C287CC5D1000A109E /* HelpEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpEvent.swift; sourceTree = "<group>"; };
 		81DAC57628800ECA000A109E /* DetailEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventViewController.swift; sourceTree = "<group>"; };
 		81DAC57828803441000A109E /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
+		81F7031A2881C32100086B03 /* DateFormatter+CustomFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+CustomFormatters.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				81917F6C286DA99A00057891 /* UIColor+CustomColors.swift */,
+				81F7031A2881C32100086B03 /* DateFormatter+CustomFormatters.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				816525AE285DFA78005838A6 /* AppDelegate.swift in Sources */,
 				81DAC54D287CC5D1000A109E /* HelpEvent.swift in Sources */,
 				816525B0285DFA78005838A6 /* SceneDelegate.swift in Sources */,
+				81F7031B2881C32100086B03 /* DateFormatter+CustomFormatters.swift in Sources */,
 				816F50F7286B4328007F0723 /* HelpCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
