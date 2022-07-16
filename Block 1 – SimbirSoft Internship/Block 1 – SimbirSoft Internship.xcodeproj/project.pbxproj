@@ -30,6 +30,9 @@
 		81DAC547287CB3D6000A109E /* EventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAC546287CB3D6000A109E /* EventsCollectionViewController.swift */; };
 		81DAC54B287CB64E000A109E /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAC54A287CB64E000A109E /* EventCollectionViewCell.swift */; };
 		81DAC54D287CC5D1000A109E /* HelpEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAC54C287CC5D1000A109E /* HelpEvent.swift */; };
+		81DAC57728800ECA000A109E /* DetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAC57628800ECA000A109E /* DetailEventViewController.swift */; };
+		81DAC57928803441000A109E /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAC57828803441000A109E /* PersonCollectionViewCell.swift */; };
+		81F7031B2881C32100086B03 /* DateFormatter+CustomFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7031A2881C32100086B03 /* DateFormatter+CustomFormatters.swift */; };
 		905008915877C486E5AE6DE7 /* Pods_Block_1___SimbirSoft_Internship.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A47BB5F837F2B995C76A0B3 /* Pods_Block_1___SimbirSoft_Internship.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +66,9 @@
 		81DAC546287CB3D6000A109E /* EventsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewController.swift; sourceTree = "<group>"; };
 		81DAC54A287CB64E000A109E /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		81DAC54C287CC5D1000A109E /* HelpEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpEvent.swift; sourceTree = "<group>"; };
+		81DAC57628800ECA000A109E /* DetailEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventViewController.swift; sourceTree = "<group>"; };
+		81DAC57828803441000A109E /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
+		81F7031A2881C32100086B03 /* DateFormatter+CustomFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+CustomFormatters.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				81917F6C286DA99A00057891 /* UIColor+CustomColors.swift */,
+				81F7031A2881C32100086B03 /* DateFormatter+CustomFormatters.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -155,6 +162,7 @@
 				816F50F2286B365D007F0723 /* CustomTabBar.swift */,
 				81D901CF286B627200AD6784 /* HelpCategoriesViews */,
 				81DAC549287CB5C9000A109E /* EventsViews */,
+				81DAC57A2880344D000A109E /* DetailEventViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +220,7 @@
 			children = (
 				816F50F8286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift */,
 				81DAC546287CB3D6000A109E /* EventsCollectionViewController.swift */,
+				81DAC57628800ECA000A109E /* DetailEventViewController.swift */,
 			);
 			path = HelpScreen;
 			sourceTree = "<group>";
@@ -222,6 +231,14 @@
 				81DAC54A287CB64E000A109E /* EventCollectionViewCell.swift */,
 			);
 			path = EventsViews;
+			sourceTree = "<group>";
+		};
+		81DAC57A2880344D000A109E /* DetailEventViews */ = {
+			isa = PBXGroup;
+			children = (
+				81DAC57828803441000A109E /* PersonCollectionViewCell.swift */,
+			);
+			path = DetailEventViews;
 			sourceTree = "<group>";
 		};
 		EA2BBD07EED20E299DACB359 /* Pods */ = {
@@ -378,6 +395,8 @@
 				816F50F3286B365D007F0723 /* CustomTabBar.swift in Sources */,
 				816F50F1286B2C55007F0723 /* CustomTabBarController.swift in Sources */,
 				81917F6F286DAB4100057891 /* AppearanceConfigurator.swift in Sources */,
+				81DAC57728800ECA000A109E /* DetailEventViewController.swift in Sources */,
+				81DAC57928803441000A109E /* PersonCollectionViewCell.swift in Sources */,
 				810B3599286B519700676106 /* HelpCategoriesCollectionHeaderView.swift in Sources */,
 				81DAC547287CB3D6000A109E /* EventsCollectionViewController.swift in Sources */,
 				81917F6D286DA99A00057891 /* UIColor+CustomColors.swift in Sources */,
@@ -385,6 +404,7 @@
 				816525AE285DFA78005838A6 /* AppDelegate.swift in Sources */,
 				81DAC54D287CC5D1000A109E /* HelpEvent.swift in Sources */,
 				816525B0285DFA78005838A6 /* SceneDelegate.swift in Sources */,
+				81F7031B2881C32100086B03 /* DateFormatter+CustomFormatters.swift in Sources */,
 				816F50F7286B4328007F0723 /* HelpCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

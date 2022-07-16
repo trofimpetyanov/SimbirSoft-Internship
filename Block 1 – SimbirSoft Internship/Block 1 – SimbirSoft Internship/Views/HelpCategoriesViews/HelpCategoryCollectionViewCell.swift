@@ -8,6 +8,8 @@
 import UIKit
 
 class HelpCategoryCollectionViewCell: UICollectionViewCell {
+    static let cellID = "helpCategoryCell"
+    
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     

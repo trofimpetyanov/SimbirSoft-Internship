@@ -8,8 +8,6 @@
 import UIKit
 
 class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    private static let reuseIdentifier = "helpCategoryCell"
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     private lazy var flowLayout: UICollectionViewFlowLayout = {
@@ -39,7 +37,7 @@ class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: HelpCategoriesViewController.reuseIdentifier,
+            withReuseIdentifier: HelpCategoryCollectionViewCell.cellID,
             for: indexPath) as? HelpCategoryCollectionViewCell else { return UICollectionViewCell() }
         let helpCategory = helpCategories[indexPath.row]
         
@@ -53,7 +51,7 @@ class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource
         case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
-                withReuseIdentifier: "helpCategoriesHeader",
+                withReuseIdentifier: HelpCategoriesCollectionHeaderView.headerID,
                 for: indexPath) as? HelpCategoriesCollectionHeaderView else { return UICollectionViewCell() }
             headerView.titleLabel.text = "Выберите категорию помощи"
             return headerView
@@ -66,6 +64,6 @@ class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource
         guard let cell = sender as? HelpCategoryCollectionViewCell, let indexPath = collectionView.indexPath(for: cell)
         else { return EventsCollectionViewController(coder: coder) }
         
-        return EventsCollectionViewController(coder: coder, helpCategory: helpCategories[indexPath.item])
+        return EventsCollectionViewController(coder: coder, helpEvents: helpCategories[indexPath.item].events)
     }
 }
