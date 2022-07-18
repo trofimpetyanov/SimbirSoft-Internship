@@ -8,10 +8,10 @@
 import UIKit
 import SnapKit
 
-class EventCollectionViewCell: UICollectionViewCell {
+final class EventCollectionViewCell: UICollectionViewCell {
     static let cellID = "eventCell"
     
-    lazy var imageView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         
         imageView.contentMode = .scaleAspectFill
@@ -19,7 +19,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    lazy var shadowImageView: UIImageView = {
+    private lazy var shadowImageView: UIImageView = {
         let imageView = UIImageView()
         
         imageView.image = UIImage(named: "shadow")
@@ -27,7 +27,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    lazy var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         
         label.numberOfLines = 0
@@ -38,7 +38,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var separatorImageView: UIImageView = {
+    private lazy var separatorImageView: UIImageView = {
         let image = UIImage(named: "heartSeparator")
         let imageView = UIImageView()
         
@@ -48,7 +48,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    lazy var descriptionLabel: UILabel = {
+    private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         
         label.numberOfLines = 0
@@ -58,7 +58,22 @@ class EventCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var calendarImageView: UIImageView = {
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .fill
+        stackView.spacing = 8
+        
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(separatorImageView)
+        stackView.addArrangedSubview(descriptionLabel)
+        
+        return stackView
+    }()
+    
+    private lazy var calendarImageView: UIImageView = {
         let image = UIImage(named: "calendar")
         let imageView = UIImageView(image: image)
         
@@ -67,21 +82,22 @@ class EventCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    lazy var dateLabel: UILabel = {
+    private lazy var dateLabel: UILabel = {
         let label = UILabel()
         
-        label.font = UIFont(name: "OfficinaSansExtraBoldSCC", size: 11)
-        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 11)
+        label.textAlignment = .left
         label.textColor = UIColor.white
         
         return label
     }()
     
-    lazy var dateStackView: UIStackView = {
+    private lazy var dateStackView: UIStackView = {
         let stackView = UIStackView()
         
         stackView.axis = .horizontal
         stackView.alignment = .center
+        stackView.spacing = 8
         
         stackView.addArrangedSubview(calendarImageView)
         stackView.addArrangedSubview(dateLabel)
@@ -89,19 +105,18 @@ class EventCollectionViewCell: UICollectionViewCell {
         return stackView
     }()
     
-    lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
+    private lazy var dateView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .leaf
         
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.distribution = .fill
-        stackView.spacing = 4
+        view.addSubview(dateStackView)
         
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(separatorImageView)
-        stackView.addArrangedSubview(descriptionLabel)
+        dateStackView.snp.remakeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview()
+        }
         
-        return stackView
+        return view
     }()
     
     override func layoutSubviews() {
@@ -111,24 +126,38 @@ class EventCollectionViewCell: UICollectionViewCell {
         self.addSubview(imageView)
         self.addSubview(shadowImageView)
         self.addSubview(stackView)
+        self.addSubview(dateView)
         
-        imageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(10)
-            make.leading.trailing.equalToSuperview().inset(8)
+        imageView.snp.remakeConstraints {
+            $0.top.equalToSuperview().inset(8)
+            $0.leading.trailing.equalToSuperview().inset(4)
         }
         
-        shadowImageView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(imageView).inset(-4)
+        shadowImageView.snp.remakeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(4)
+            $0.bottom.equalTo(imageView).offset(8)
         }
         
-        separatorImageView.snp.makeConstraints { make in
-            make.height.equalTo(20)
+        stackView.snp.remakeConstraints {
+            $0.top.equalTo(imageView.snp.bottom)
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
         
-        stackView.snp.makeConstraints { make in
-            make.top.equalTo(separatorImageView.snp.bottomMargin)
-            make.leading.trailing.equalToSuperview().inset(8)
+        dateView.snp.remakeConstraints {
+            $0.top.equalTo(stackView.snp.bottom).offset(8)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+    }
+    
+    func configure(with helpEvent: HelpEvent) {
+        imageView.image = UIImage(named: helpEvent.imageNames[0])
+        titleLabel.text = helpEvent.name
+        descriptionLabel.text = helpEvent.shortDescription
+        
+        if let dateDifference = Calendar.current.dateComponents([.day], from: helpEvent.startDate, to: helpEvent.endDate).day {
+            let dateRange = DateFormatter.dateRange(startDate: helpEvent.startDate, endDate: helpEvent.endDate, style: .ddMM)
+                                                    
+            dateLabel.text = "Осталось \(dateDifference) дней (\(dateRange))"
         }
     }
 }

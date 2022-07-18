@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailEventViewController: UIViewController {
+final class DetailEventViewController: UIViewController {
     @IBOutlet var eventNameLabel: UILabel!
     @IBOutlet var dateRangeStackView: UIStackView!
     @IBOutlet var dateRangeLabel: UILabel!
@@ -42,24 +42,19 @@ class DetailEventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         configureUI()
     }
     
-    func configureUI() {
+    private func configureUI() {
         title = helpEvent.name
         
         eventNameLabel.text = helpEvent.name
         
         // Date Range Label
-        let startDateString = DateFormatter.ddMM.string(from: helpEvent.startDate)
-        let endDateString = DateFormatter.ddMM.string(from: helpEvent.endDate)
         if let dateDifference = Calendar.current.dateComponents([.day], from: helpEvent.startDate, to: helpEvent.endDate).day {
-            dateRangeLabel.text = "Осталось \(dateDifference) дней (\(startDateString) - \(endDateString))"
+            let dateRange = DateFormatter.dateRange(startDate: helpEvent.startDate, endDate: helpEvent.endDate, style: .ddMM)
+                                                    
+            dateRangeLabel.text = "Осталось \(dateDifference) дней (\(dateRange))"
             
             dateRangeStackView.isHidden = false
         } else {
@@ -124,5 +119,21 @@ class DetailEventViewController: UIViewController {
         }
         
         countLabel.text = "+\(helpEvent.peopleCount - 5)"
+    }
+    
+    @IBAction func shareButtonTapped(_ sender: UIBarButtonItem) {
+        let eventName = helpEvent.name
+        let dateRange = DateFormatter.dateRange(startDate: helpEvent.startDate, endDate: helpEvent.endDate, style: .ddMM)
+        let address = helpEvent.address
+        let message = "\(eventName)\n\n\(dateRange)\n\(address)"
+        var activityItems: [Any] = [message]
+        
+        if let image = UIImage(named: helpEvent.imageNames[0]) {
+            activityItems.append(image)
+        }
+        
+        let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        
+        present(activityController, animated: true)
     }
 }

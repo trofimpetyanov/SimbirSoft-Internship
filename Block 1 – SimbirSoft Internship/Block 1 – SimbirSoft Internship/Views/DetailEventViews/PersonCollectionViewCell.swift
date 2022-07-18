@@ -7,6 +7,6 @@
 
 import UIKit
 
-class PersonCollectionViewCell: UICollectionViewCell {
+final class PersonCollectionViewCell: UICollectionViewCell {
     static let cellID = "personCell"
 }

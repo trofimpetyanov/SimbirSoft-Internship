@@ -8,9 +8,20 @@
 import Foundation
 
 extension DateFormatter {
-    static let ddMM: DateFormatter = {
+    enum DateStyle: String {
+        case ddMM = "dd.MM"
+    }
+    
+    static func dateFormatter(for dateStyle: DateStyle) -> DateFormatter {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM"
+        dateFormatter.dateFormat = dateStyle.rawValue
         return dateFormatter
-    }()
+    }
+    
+    static func dateRange(startDate: Date, endDate: Date, style: DateStyle) -> String {
+        let startDateString = DateFormatter.dateFormatter(for: style).string(from: startDate)
+        let endDateString = DateFormatter.dateFormatter(for: style).string(from: endDate)
+        
+        return "\(startDateString) - \(endDateString)"
+    }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+final class HelpCategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private lazy var flowLayout: UICollectionViewFlowLayout = {

@@ -7,14 +7,14 @@
 
 import UIKit
 
-class EventsCollectionViewController: UICollectionViewController {
+final class EventsCollectionViewController: UICollectionViewController {
     
     private lazy var flowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
         flowLayout.minimumInteritemSpacing = 8
         flowLayout.minimumLineSpacing = 8
-        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 16, height: 400)
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 16, height: 412)
         flowLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         return flowLayout
     }()
@@ -36,15 +36,9 @@ class EventsCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         title = helpCategory.name
-        view.backgroundColor = .gray
         
+        collectionView.backgroundColor = .backgroundGray
         collectionView.collectionViewLayout = flowLayout
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: UICollectionViewDataSource
@@ -57,23 +51,23 @@ class EventsCollectionViewController: UICollectionViewController {
             withReuseIdentifier: EventCollectionViewCell.cellID,
             for: indexPath) as? EventCollectionViewCell
         else { return UICollectionViewCell() }
+        let helpEvent = helpEvents[indexPath.item]
     
-        let event = helpEvents[indexPath.item]
-    
-        cell.imageView.image = UIImage(named: event.imageNames[0])
-        cell.titleLabel.text = event.name
-        cell.descriptionLabel.text = event.shortDescription
-        cell.dateLabel.text = "\(event.startDate)"
+        cell.configure(with: helpEvent)
         
         return cell
     }
     
     @IBSegueAction func showDetailEvent(_ coder: NSCoder, sender: Any?) -> DetailEventViewController? {
-        tabBarController?.tabBar.isHidden = true
-        
         guard let cell = sender as? EventCollectionViewCell, let indexPath = collectionView.indexPath(for: cell)
         else { return DetailEventViewController(coder: coder) }
         
         return DetailEventViewController(coder: coder, helpEvent: helpEvents[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailEventViewController = segue.destination as? DetailEventViewController {
+            detailEventViewController.hidesBottomBarWhenPushed = true
+        }
     }
 }
