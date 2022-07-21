@@ -15,6 +15,8 @@ final class EventCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         
         imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 5
+        imageView.clipsToBounds = true
         
         return imageView
     }()
@@ -23,14 +25,24 @@ final class EventCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         
         imageView.image = UIImage(named: "shadow")
+        imageView.contentMode = .scaleToFill
 
         return imageView
+    }()
+    
+    private lazy var imagesView: UIView = {
+        let view = UIView()
+        
+        view.addSubview(imageView)
+        view.addSubview(shadowImageView)
+        
+        return view
     }()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         label.font = UIFont(name: "OfficinaSansExtraBoldSCC", size: 21)
         label.textAlignment = .center
         label.textColor = UIColor.blueGray
@@ -51,7 +63,7 @@ final class EventCollectionViewCell: UICollectionViewCell {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         
-        label.numberOfLines = 0
+        label.numberOfLines = 3
         label.textAlignment = .center
         label.textColor = UIColor.darkSlateBlue
         
@@ -77,7 +89,7 @@ final class EventCollectionViewCell: UICollectionViewCell {
         let image = UIImage(named: "calendar")
         let imageView = UIImageView(image: image)
         
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .bottom
         
         return imageView
     }()
@@ -111,40 +123,58 @@ final class EventCollectionViewCell: UICollectionViewCell {
         
         view.addSubview(dateStackView)
         
-        dateStackView.snp.remakeConstraints {
+        return view
+    }()
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        backgroundColor = .white
+        layer.cornerRadius = 8
+        
+        setupConstraints()
+    }
+    
+    func setupConstraints() {
+        self.addSubview(imageView)
+        self.addSubview(shadowImageView)
+        self.addSubview(titleLabel)
+        self.addSubview(separatorImageView)
+        self.addSubview(descriptionLabel)
+        self.addSubview(dateView)
+        
+        imageView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(4)
+            $0.leading.trailing.equalToSuperview().inset(4)
+        }
+        
+        shadowImageView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(imageView.snp.bottom)
+        }
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(shadowImageView.snp.bottom).offset(8)
+            $0.leading.trailing.equalToSuperview().inset(8)
+        }
+        
+        separatorImageView.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(8)
+            $0.leading.trailing.equalToSuperview().inset(8)
+        }
+        
+        descriptionLabel.snp.makeConstraints {
+            $0.top.equalTo(separatorImageView.snp.bottom).offset(8)
+            $0.leading.trailing.equalToSuperview().inset(8)
+        }
+        
+        dateStackView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview()
         }
         
-        return view
-    }()
-    
-    override func layoutSubviews() {
-        backgroundColor = .white
-        layer.cornerRadius = 8
-        
-        self.addSubview(imageView)
-        self.addSubview(shadowImageView)
-        self.addSubview(stackView)
-        self.addSubview(dateView)
-        
-        imageView.snp.remakeConstraints {
-            $0.top.equalToSuperview().inset(8)
-            $0.leading.trailing.equalToSuperview().inset(4)
-        }
-        
-        shadowImageView.snp.remakeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(4)
-            $0.bottom.equalTo(imageView).offset(8)
-        }
-        
-        stackView.snp.remakeConstraints {
-            $0.top.equalTo(imageView.snp.bottom)
-            $0.leading.trailing.equalToSuperview().inset(20)
-        }
-        
-        dateView.snp.remakeConstraints {
-            $0.top.equalTo(stackView.snp.bottom).offset(8)
+        dateView.snp.makeConstraints {
+            $0.top.equalTo(descriptionLabel.snp.bottom).offset(8)
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }

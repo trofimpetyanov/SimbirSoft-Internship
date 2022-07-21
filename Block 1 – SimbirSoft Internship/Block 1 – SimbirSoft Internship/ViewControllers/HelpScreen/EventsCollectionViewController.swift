@@ -14,7 +14,7 @@ final class EventsCollectionViewController: UICollectionViewController {
         flowLayout.scrollDirection = .vertical
         flowLayout.minimumInteritemSpacing = 8
         flowLayout.minimumLineSpacing = 8
-        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 16, height: 412)
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 16, height: 420)
         flowLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         return flowLayout
     }()
