@@ -1,0 +1,35 @@
+[
+  {
+    "id": 0,
+    "imageName": "children",
+    "name": "Дети",
+    "eventsIds": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": 1,
+    "imageName": "adults",
+    "name": "Взрослые",
+    "eventsIds": []
+  },
+  {
+    "id": 2,
+    "imageName": "seniors",
+    "name": "Пожилые",
+    "eventsIds": []
+  },
+  {
+    "id": 3,
+    "imageName": "animals",
+    "name": "Животные",
+    "eventsIds": []
+  },
+  {
+    "id": 4,
+    "imageName": "events",
+    "name": "Мероприятия",
+    "eventsIds": []
+  }
+]
