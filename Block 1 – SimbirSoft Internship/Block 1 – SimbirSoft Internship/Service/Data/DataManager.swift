@@ -26,6 +26,8 @@ struct DataManager {
     private init() { }
     
     private func unarchiveJSON<T: Decodable>(key: String) -> T? {
+        sleep(1)
+        
         guard
             let filepath = Bundle.main.path(forResource: key, ofType: "json"),
             let string = try? String(contentsOfFile: filepath),
