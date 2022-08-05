@@ -34,6 +34,7 @@
 		81F7031B2881C32100086B03 /* DateFormatter+CustomFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7031A2881C32100086B03 /* DateFormatter+CustomFormatters.swift */; };
 		81F7031E2882AD4B00086B03 /* HelpCategories.json in Resources */ = {isa = PBXBuildFile; fileRef = 81F7031D2882AD4B00086B03 /* HelpCategories.json */; };
 		81F703202882AD5300086B03 /* HelpEvents.json in Resources */ = {isa = PBXBuildFile; fileRef = 81F7031F2882AD5300086B03 /* HelpEvents.json */; };
+		81FE58FF289D0F1C004FA640 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 81D901D7286B7AF700AD6784 /* .swiftlint.yml */; };
 		905008915877C486E5AE6DE7 /* Pods_Block_1___SimbirSoft_Internship.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A47BB5F837F2B995C76A0B3 /* Pods_Block_1___SimbirSoft_Internship.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +48,7 @@
 		814B8854286DA62E00B03EA4 /* SearchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchScreen.storyboard; sourceTree = "<group>"; };
 		814B8856286DA64F00B03EA4 /* HistoryScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryScreen.storyboard; sourceTree = "<group>"; };
 		814B8858286DA67200B03EA4 /* ProfileScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileScreen.storyboard; sourceTree = "<group>"; };
-		816525AA285DFA78005838A6 /* Block 1 – SimbirSoft Internship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Block 1 – SimbirSoft Internship.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		816525AA285DFA78005838A6 /* SimbirSoftInternship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimbirSoftInternship.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		816525AD285DFA78005838A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		816525AF285DFA78005838A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		816525B4285DFA78005838A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,7 +63,7 @@
 		816F50FA286B4530007F0723 /* HelpCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		81917F6C286DA99A00057891 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConfigurator.swift; sourceTree = "<group>"; };
-		81D901D7286B7AF700AD6784 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = "/Users/trofimpetanov/Documents/GitHub/Block-1-Simbirsoft-Internship/Block 1 – SimbirSoft Internship/.swiftlint.yml"; sourceTree = "<absolute>"; };
+		81D901D7286B7AF700AD6784 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = "/Users/trofimpetanov/Documents/GitHub/SimbirSoft-Internship/SimbirSoft Internship/.swiftlint.yml"; sourceTree = "<absolute>"; wrapsLines = 1; };
 		81DAC544287C5635000A109E /* OfficinaSansExtraBoldSCC.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OfficinaSansExtraBoldSCC.otf; sourceTree = "<group>"; };
 		81DAC546287CB3D6000A109E /* EventsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewController.swift; sourceTree = "<group>"; };
 		81DAC54A287CB64E000A109E /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -109,7 +110,7 @@
 		816525A1285DFA78005838A6 = {
 			isa = PBXGroup;
 			children = (
-				816525AC285DFA78005838A6 /* Block 1 – SimbirSoft Internship */,
+				816525AC285DFA78005838A6 /* SimbirSoftInternship */,
 				816525AB285DFA78005838A6 /* Products */,
 				EA2BBD07EED20E299DACB359 /* Pods */,
 				2C32168B0A715490E2D3F558 /* Frameworks */,
@@ -120,12 +121,12 @@
 		816525AB285DFA78005838A6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				816525AA285DFA78005838A6 /* Block 1 – SimbirSoft Internship.app */,
+				816525AA285DFA78005838A6 /* SimbirSoftInternship.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		816525AC285DFA78005838A6 /* Block 1 – SimbirSoft Internship */ = {
+		816525AC285DFA78005838A6 /* SimbirSoftInternship */ = {
 			isa = PBXGroup;
 			children = (
 				81D901CB286B622700AD6784 /* Models */,
@@ -137,7 +138,7 @@
 				81D901D0286B628D00AD6784 /* Resources */,
 				816525BB285DFA79005838A6 /* Info.plist */,
 			);
-			path = "Block 1 – SimbirSoft Internship";
+			path = SimbirSoftInternship;
 			sourceTree = "<group>";
 		};
 		81917F6B286DA93800057891 /* Extensions */ = {
@@ -256,9 +257,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		816525A9285DFA78005838A6 /* Block 1 – SimbirSoft Internship */ = {
+		816525A9285DFA78005838A6 /* SimbirSoftInternship */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 816525BE285DFA79005838A6 /* Build configuration list for PBXNativeTarget "Block 1 – SimbirSoft Internship" */;
+			buildConfigurationList = 816525BE285DFA79005838A6 /* Build configuration list for PBXNativeTarget "SimbirSoftInternship" */;
 			buildPhases = (
 				52D09C4059BC427B58D0BE5F /* [CP] Check Pods Manifest.lock */,
 				816128F7286B60650040BBA3 /* ShellScript */,
@@ -271,9 +272,9 @@
 			);
 			dependencies = (
 			);
-			name = "Block 1 – SimbirSoft Internship";
+			name = SimbirSoftInternship;
 			productName = "Block 1 – SimbirSoft Internship";
-			productReference = 816525AA285DFA78005838A6 /* Block 1 – SimbirSoft Internship.app */;
+			productReference = 816525AA285DFA78005838A6 /* SimbirSoftInternship.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -291,7 +292,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 816525A5285DFA78005838A6 /* Build configuration list for PBXProject "Block 1 – SimbirSoft Internship" */;
+			buildConfigurationList = 816525A5285DFA78005838A6 /* Build configuration list for PBXProject "SimbirSoftInternship" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -304,7 +305,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				816525A9285DFA78005838A6 /* Block 1 – SimbirSoft Internship */,
+				816525A9285DFA78005838A6 /* SimbirSoftInternship */,
 			);
 		};
 /* End PBXProject section */
@@ -314,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81FE58FF289D0F1C004FA640 /* .swiftlint.yml in Resources */,
 				814B8859286DA67200B03EA4 /* ProfileScreen.storyboard in Resources */,
 				816525BA285DFA79005838A6 /* LaunchScreen.storyboard in Resources */,
 				814B8851286DA52500B03EA4 /* HelpScreen.storyboard in Resources */,
@@ -559,7 +561,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2Z58X67VS2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Block 1 – SimbirSoft Internship/Info.plist";
+				INFOPLIST_FILE = SimbirSoftInternship/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Хочу помочь";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -572,11 +574,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "trofimpetyanov.Block-1---SimbirSoft-Internship";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trofimpetyanov.SimbirSoftInternship;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -590,7 +592,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2Z58X67VS2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Block 1 – SimbirSoft Internship/Info.plist";
+				INFOPLIST_FILE = SimbirSoftInternship/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Хочу помочь";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -603,18 +605,18 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "trofimpetyanov.Block-1---SimbirSoft-Internship";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trofimpetyanov.SimbirSoftInternship;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		816525A5285DFA78005838A6 /* Build configuration list for PBXProject "Block 1 – SimbirSoft Internship" */ = {
+		816525A5285DFA78005838A6 /* Build configuration list for PBXProject "SimbirSoftInternship" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				816525BC285DFA79005838A6 /* Debug */,
@@ -623,7 +625,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		816525BE285DFA79005838A6 /* Build configuration list for PBXNativeTarget "Block 1 – SimbirSoft Internship" */ = {
+		816525BE285DFA79005838A6 /* Build configuration list for PBXNativeTarget "SimbirSoftInternship" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				816525BF285DFA79005838A6 /* Debug */,
