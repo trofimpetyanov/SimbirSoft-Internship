@@ -21,16 +21,50 @@ final class HelpCategoriesViewController: UIViewController, UICollectionViewData
         return flowLayout
     }()
     
-    let helpCategories: [HelpCategory] = DataManager.shared.helpCategories
+	private lazy var activityIndicatorView: UIActivityIndicatorView = {
+		let activityIndicatorView = UIActivityIndicatorView()
+		activityIndicatorView.style = .gray
+		activityIndicatorView.hidesWhenStopped = true
+		activityIndicatorView.center = view.center
+		return activityIndicatorView
+	}()
     
+	var helpCategories: [HelpCategory] = []
+	
+	// MARK: – Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.collectionViewLayout = flowLayout
-        collectionView.alwaysBounceVertical = true
-    }
+		setup()
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		fetchHelpCategories()
+	}
+	
+	// MARK: – Helpers
+	func setup() {
+		collectionView.collectionViewLayout = flowLayout
+		collectionView.alwaysBounceVertical = true
+		
+		collectionView.backgroundView = activityIndicatorView
+		activityIndicatorView.startAnimating()
+	}
+	
+	func fetchHelpCategories() {
+		DispatchQueue.global(qos: .background).async {
+			self.helpCategories = DataManager.shared.helpCategories
+			
+			DispatchQueue.main.async {
+				self.activityIndicatorView.stopAnimating()
+				self.collectionView.reloadData()
+			}
+		}
+	}
     
-    // MARK: UICollectionViewDataSource
+    // MARK: Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return helpCategories.count
     }
