@@ -39,8 +39,6 @@ final class EventsCollectionViewController: UICollectionViewController {
         
         collectionView.backgroundColor = .backgroundGray
         collectionView.collectionViewLayout = flowLayout
-		
-		print(helpEvents)
     }
     
     // MARK: UICollectionViewDataSource
