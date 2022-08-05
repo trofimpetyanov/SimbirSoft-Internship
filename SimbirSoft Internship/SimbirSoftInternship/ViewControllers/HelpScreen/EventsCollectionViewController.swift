@@ -21,7 +21,7 @@ final class EventsCollectionViewController: UICollectionViewController {
     
     init?(coder: NSCoder, helpCategory: HelpCategory) {
         self.helpCategory = helpCategory
-        self.helpEvents = DataManager.shared.helpEvents.filter { helpCategory.eventsIds.contains($0.id) }
+        self.helpEvents = DataManager.shared.helpEvents.filter { helpCategory.eventIds.contains($0.id) }
         super.init(coder: coder)
     }
     
@@ -39,6 +39,8 @@ final class EventsCollectionViewController: UICollectionViewController {
         
         collectionView.backgroundColor = .backgroundGray
         collectionView.collectionViewLayout = flowLayout
+		
+		print(helpEvents)
     }
     
     // MARK: UICollectionViewDataSource

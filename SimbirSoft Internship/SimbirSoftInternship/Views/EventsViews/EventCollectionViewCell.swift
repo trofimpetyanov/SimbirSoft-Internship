@@ -146,6 +146,7 @@ final class EventCollectionViewCell: UICollectionViewCell {
         imageView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(4)
             $0.leading.trailing.equalToSuperview().inset(4)
+			$0.height.equalTo(230)
         }
         
         shadowImageView.snp.makeConstraints {

@@ -35,6 +35,20 @@
 		81F7031E2882AD4B00086B03 /* HelpCategories.json in Resources */ = {isa = PBXBuildFile; fileRef = 81F7031D2882AD4B00086B03 /* HelpCategories.json */; };
 		81F703202882AD5300086B03 /* HelpEvents.json in Resources */ = {isa = PBXBuildFile; fileRef = 81F7031F2882AD5300086B03 /* HelpEvents.json */; };
 		81FE58FF289D0F1C004FA640 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 81D901D7286B7AF700AD6784 /* .swiftlint.yml */; };
+		81FE5903289D12FE004FA640 /* HelpCategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5902289D12FE004FA640 /* HelpCategoryResponse.swift */; };
+		81FE5905289D131B004FA640 /* HelpEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5904289D131B004FA640 /* HelpEventResponse.swift */; };
+		81FE5909289D206A004FA640 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5908289D206A004FA640 /* CoreDataStack.swift */; };
+		81FE590C289D20AC004FA640 /* SimbirSoftInternship.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81FE590A289D20AC004FA640 /* SimbirSoftInternship.xcdatamodeld */; };
+		81FE592B289D342F004FA640 /* CDEventId+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5921289D342F004FA640 /* CDEventId+CoreDataClass.swift */; };
+		81FE592C289D342F004FA640 /* CDEventId+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5922289D342F004FA640 /* CDEventId+CoreDataProperties.swift */; };
+		81FE592D289D342F004FA640 /* CDHelpEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5923289D342F004FA640 /* CDHelpEvent+CoreDataClass.swift */; };
+		81FE592E289D342F004FA640 /* CDHelpEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5924289D342F004FA640 /* CDHelpEvent+CoreDataProperties.swift */; };
+		81FE592F289D342F004FA640 /* CDHelpCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5925289D342F004FA640 /* CDHelpCategory+CoreDataClass.swift */; };
+		81FE5930289D342F004FA640 /* CDHelpCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5926289D342F004FA640 /* CDHelpCategory+CoreDataProperties.swift */; };
+		81FE5931289D342F004FA640 /* CDPhoneNumber+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5927289D342F004FA640 /* CDPhoneNumber+CoreDataClass.swift */; };
+		81FE5932289D342F004FA640 /* CDPhoneNumber+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5928289D342F004FA640 /* CDPhoneNumber+CoreDataProperties.swift */; };
+		81FE5933289D342F004FA640 /* CDImageName+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5929289D342F004FA640 /* CDImageName+CoreDataClass.swift */; };
+		81FE5934289D342F004FA640 /* CDImageName+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE592A289D342F004FA640 /* CDImageName+CoreDataProperties.swift */; };
 		905008915877C486E5AE6DE7 /* Pods_Block_1___SimbirSoft_Internship.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A47BB5F837F2B995C76A0B3 /* Pods_Block_1___SimbirSoft_Internship.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +86,20 @@
 		81F7031A2881C32100086B03 /* DateFormatter+CustomFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+CustomFormatters.swift"; sourceTree = "<group>"; };
 		81F7031D2882AD4B00086B03 /* HelpCategories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HelpCategories.json; sourceTree = "<group>"; };
 		81F7031F2882AD5300086B03 /* HelpEvents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HelpEvents.json; sourceTree = "<group>"; };
+		81FE5902289D12FE004FA640 /* HelpCategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoryResponse.swift; sourceTree = "<group>"; };
+		81FE5904289D131B004FA640 /* HelpEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpEventResponse.swift; sourceTree = "<group>"; };
+		81FE5908289D206A004FA640 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		81FE590B289D20AC004FA640 /* SimbirSoftInternship.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimbirSoftInternship.xcdatamodel; sourceTree = "<group>"; };
+		81FE5921289D342F004FA640 /* CDEventId+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEventId+CoreDataClass.swift"; sourceTree = "<group>"; };
+		81FE5922289D342F004FA640 /* CDEventId+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEventId+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		81FE5923289D342F004FA640 /* CDHelpEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDHelpEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		81FE5924289D342F004FA640 /* CDHelpEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDHelpEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		81FE5925289D342F004FA640 /* CDHelpCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDHelpCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		81FE5926289D342F004FA640 /* CDHelpCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDHelpCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		81FE5927289D342F004FA640 /* CDPhoneNumber+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPhoneNumber+CoreDataClass.swift"; sourceTree = "<group>"; };
+		81FE5928289D342F004FA640 /* CDPhoneNumber+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPhoneNumber+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		81FE5929289D342F004FA640 /* CDImageName+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDImageName+CoreDataClass.swift"; sourceTree = "<group>"; };
+		81FE592A289D342F004FA640 /* CDImageName+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDImageName+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +200,9 @@
 		81D901CD286B625900AD6784 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				816F50F4286B4209007F0723 /* DataManager.swift */,
 				81F7031C2882AC6B00086B03 /* Data */,
+				81FE5906289D2032004FA640 /* CoreData */,
 				81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */,
 			);
 			path = Service;
@@ -238,11 +268,55 @@
 		81F7031C2882AC6B00086B03 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				816F50F4286B4209007F0723 /* DataManager.swift */,
+				81FE5900289D12D4004FA640 /* Models */,
+				81FE5901289D12DD004FA640 /* JSON */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		81FE5900289D12D4004FA640 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				81FE5902289D12FE004FA640 /* HelpCategoryResponse.swift */,
+				81FE5904289D131B004FA640 /* HelpEventResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		81FE5901289D12DD004FA640 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
 				81F7031D2882AD4B00086B03 /* HelpCategories.json */,
 				81F7031F2882AD5300086B03 /* HelpEvents.json */,
 			);
-			path = Data;
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		81FE5906289D2032004FA640 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				81FE5907289D2044004FA640 /* Models */,
+				81FE5908289D206A004FA640 /* CoreDataStack.swift */,
+				81FE590A289D20AC004FA640 /* SimbirSoftInternship.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		81FE5907289D2044004FA640 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				81FE5921289D342F004FA640 /* CDEventId+CoreDataClass.swift */,
+				81FE5922289D342F004FA640 /* CDEventId+CoreDataProperties.swift */,
+				81FE5923289D342F004FA640 /* CDHelpEvent+CoreDataClass.swift */,
+				81FE5924289D342F004FA640 /* CDHelpEvent+CoreDataProperties.swift */,
+				81FE5925289D342F004FA640 /* CDHelpCategory+CoreDataClass.swift */,
+				81FE5926289D342F004FA640 /* CDHelpCategory+CoreDataProperties.swift */,
+				81FE5927289D342F004FA640 /* CDPhoneNumber+CoreDataClass.swift */,
+				81FE5928289D342F004FA640 /* CDPhoneNumber+CoreDataProperties.swift */,
+				81FE5929289D342F004FA640 /* CDImageName+CoreDataClass.swift */,
+				81FE592A289D342F004FA640 /* CDImageName+CoreDataProperties.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		EA2BBD07EED20E299DACB359 /* Pods */ = {
@@ -398,19 +472,33 @@
 			files = (
 				816F50FB286B4530007F0723 /* HelpCategoryCollectionViewCell.swift in Sources */,
 				816F50F9286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift in Sources */,
+				81FE5931289D342F004FA640 /* CDPhoneNumber+CoreDataClass.swift in Sources */,
 				816F50F5286B4209007F0723 /* DataManager.swift in Sources */,
 				816F50F3286B365D007F0723 /* CustomTabBar.swift in Sources */,
+				81FE592C289D342F004FA640 /* CDEventId+CoreDataProperties.swift in Sources */,
 				816F50F1286B2C55007F0723 /* CustomTabBarController.swift in Sources */,
 				81917F6F286DAB4100057891 /* AppearanceConfigurator.swift in Sources */,
 				81DAC57728800ECA000A109E /* DetailEventViewController.swift in Sources */,
 				810B3599286B519700676106 /* HelpCategoriesCollectionHeaderView.swift in Sources */,
+				81FE5930289D342F004FA640 /* CDHelpCategory+CoreDataProperties.swift in Sources */,
+				81FE5909289D206A004FA640 /* CoreDataStack.swift in Sources */,
+				81FE592B289D342F004FA640 /* CDEventId+CoreDataClass.swift in Sources */,
+				81FE5905289D131B004FA640 /* HelpEventResponse.swift in Sources */,
 				81DAC547287CB3D6000A109E /* EventsCollectionViewController.swift in Sources */,
 				81917F6D286DA99A00057891 /* UIColor+CustomColors.swift in Sources */,
+				81FE5903289D12FE004FA640 /* HelpCategoryResponse.swift in Sources */,
 				81DAC54B287CB64E000A109E /* EventCollectionViewCell.swift in Sources */,
 				816525AE285DFA78005838A6 /* AppDelegate.swift in Sources */,
 				81DAC54D287CC5D1000A109E /* HelpEvent.swift in Sources */,
+				81FE592D289D342F004FA640 /* CDHelpEvent+CoreDataClass.swift in Sources */,
+				81FE5934289D342F004FA640 /* CDImageName+CoreDataProperties.swift in Sources */,
 				816525B0285DFA78005838A6 /* SceneDelegate.swift in Sources */,
+				81FE592E289D342F004FA640 /* CDHelpEvent+CoreDataProperties.swift in Sources */,
+				81FE590C289D20AC004FA640 /* SimbirSoftInternship.xcdatamodeld in Sources */,
+				81FE592F289D342F004FA640 /* CDHelpCategory+CoreDataClass.swift in Sources */,
 				81F7031B2881C32100086B03 /* DateFormatter+CustomFormatters.swift in Sources */,
+				81FE5933289D342F004FA640 /* CDImageName+CoreDataClass.swift in Sources */,
+				81FE5932289D342F004FA640 /* CDPhoneNumber+CoreDataProperties.swift in Sources */,
 				816F50F7286B4328007F0723 /* HelpCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,6 +723,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		81FE590A289D20AC004FA640 /* SimbirSoftInternship.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				81FE590B289D20AC004FA640 /* SimbirSoftInternship.xcdatamodel */,
+			);
+			currentVersion = 81FE590B289D20AC004FA640 /* SimbirSoftInternship.xcdatamodel */;
+			path = SimbirSoftInternship.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 816525A2285DFA78005838A6 /* Project object */;
 }
