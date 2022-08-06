@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension CDPhoneNumber {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<CDPhoneNumber> {

@@ -10,13 +10,14 @@ import RealmSwift
 import UIKit
 
 struct DataManager {
-	static let isCoreData = false
-	
+	// MARK: – Data Key
 	enum DataKey {
 		static let helpCategoryResponse = "HelpCategories"
 		static let helpEventResponse = "HelpEvents"
 	}
 	
+	// MARK: – Properties
+	static let isCoreData = true
 	static let shared = DataManager()
 	
 	private var helpCategoriesResponse: [HelpCategoryResponse] {
@@ -55,14 +56,19 @@ struct DataManager {
 			let rsHelpCategories = realm.objects(RSHelpCategory.self)
 			
 			if !rsHelpCategories.isEmpty {
-				
 				return rsHelpCategories.map { HelpCategory(rsHelpCategory: $0) }
 			}
 			
 			insertRSHelpCategories()
 		}
 		
-		return helpCategoriesResponse.map { HelpCategory(helpCategoryResponse: $0) }.sorted(by: { $0.id < $1.id })
+		let fetchedHelpCategories = fetchHelpCategories()
+		
+		if !fetchedHelpCategories.isEmpty {
+			return fetchedHelpCategories.map { HelpCategory(helpCategoryResponse: $0) }.sorted(by: { $0.id < $1.id })
+		} else {
+			return helpCategoriesResponse.map { HelpCategory(helpCategoryResponse: $0) }.sorted(by: { $0.id < $1.id })
+		}
 	}
 	
 	var helpEvents: [HelpEvent] {
@@ -99,13 +105,65 @@ struct DataManager {
 			insertRSHelpEvents()
 		}
 		
-		return helpEventsResponse.map { HelpEvent(helpEventResponse: $0) }.sorted(by: { $0.id < $1.id })
+		let fetchedHelpEvents = fetchHelpEvents()
+		
+		if !fetchedHelpEvents.isEmpty {
+			return fetchedHelpEvents.map { HelpEvent(helpEventResponse: $0) }.sorted(by: { $0.id < $1.id })
+		} else {
+			return helpEventsResponse.map { HelpEvent(helpEventResponse: $0) }.sorted(by: { $0.id < $1.id })
+		}
 	}
 	
+	// MARK: – Init
 	private init() { }
 	
+	// MARK: – Fetching
+	func fetchHelpCategories() -> [HelpCategoryResponse] {
+		var helpCategories = [HelpCategoryResponse]()
+		
+		HelpCategoriesRequest().send { result in
+			switch result {
+			case .success(let helpCategoriesResponse):
+				helpCategories = helpCategoriesResponse
+			case .failure(let error):
+				print(error.localizedDescription)
+				
+				helpCategories = []
+			}
+		}
+		
+		return helpCategories
+	}
+	
+	private func fetchHelpEvents() -> [HelpEventResponse] {
+		var helpEvents = [HelpEventResponse]()
+		
+		HelpEventsRequest().send { result in
+			switch result {
+			case .success(let helpEventsResponse):
+				helpEvents = helpEventsResponse
+			case .failure(let error):
+				print(error.localizedDescription)
+				
+				helpEvents = []
+			}
+		}
+		
+		return helpEvents
+	}
+	
+	// MARK: – Insert in Core Data
 	private func insertCDHelpCategories(into managedContext: NSManagedObjectContext) {
-		for helpCategoryResponse in helpCategoriesResponse {
+		var helpCategories = [HelpCategoryResponse]()
+		
+		let fetchedHelpCategories = fetchHelpCategories()
+		if !fetchedHelpCategories.isEmpty {
+			helpCategories = fetchedHelpCategories
+		} else {
+			helpCategories = helpCategoriesResponse
+		}
+		
+		for helpCategoryResponse in helpCategories.sorted(by: { $0.id < $1.id }) {
 			let entity = NSEntityDescription.entity(forEntityName: "CDHelpCategory", in: managedContext)!
 			let cdHelpCategory = CDHelpCategory(entity: entity, insertInto: managedContext)
 			
@@ -125,7 +183,16 @@ struct DataManager {
 	}
 	
 	private func insertCDHelpEvents(into managedContext: NSManagedObjectContext) {
-		for helpEventResponse in helpEventsResponse {
+		var helpEvents = [HelpEventResponse]()
+		
+		let fetchedHelpEvents = fetchHelpEvents()
+		if !fetchedHelpEvents.isEmpty {
+			helpEvents = fetchedHelpEvents
+		} else {
+			helpEvents = helpEventsResponse
+		}
+		
+		for helpEventResponse in helpEvents.sorted(by: { $0.id < $1.id }) {
 			let entity = NSEntityDescription.entity(forEntityName: "CDHelpEvent", in: managedContext)!
 			let cdHelpEvent = CDHelpEvent(entity: entity, insertInto: managedContext)
 			
@@ -161,8 +228,18 @@ struct DataManager {
 		}
 	}
 	
+	// MARK: – Insert in Realm
 	private func insertRSHelpCategories() {
-		for helpCategoryResponse in helpCategoriesResponse {
+		var helpCategories = [HelpCategoryResponse]()
+		
+		let fetchedHelpCategories = fetchHelpCategories()
+		if !fetchedHelpCategories.isEmpty {
+			helpCategories = fetchedHelpCategories
+		} else {
+			helpCategories = helpCategoriesResponse
+		}
+		
+		for helpCategoryResponse in helpCategories.sorted(by: { $0.id < $1.id }) {
 			let rsHelpCategory = RSHelpCategory(helpCategoryResponse: helpCategoryResponse)
 			
 			guard let realm = try? Realm() else { return }
@@ -174,7 +251,16 @@ struct DataManager {
 	}
 	
 	private func insertRSHelpEvents() {
-		for helpEventResponse in helpEventsResponse {
+		var helpEvents = [HelpEventResponse]()
+		
+		let fetchedHelpEvents = fetchHelpEvents()
+		if !fetchedHelpEvents.isEmpty {
+			helpEvents = fetchedHelpEvents
+		} else {
+			helpEvents = helpEventsResponse
+		}
+		
+		for helpEventResponse in helpEvents.sorted(by: { $0.id < $1.id }) {
 			let rsHelpEvent = RSHelpEvent(helpEventResponse: helpEventResponse)
 			
 			guard let realm = try? Realm() else { return }
@@ -185,6 +271,7 @@ struct DataManager {
 		}
 	}
 	
+	// MARK: – JSON Reading
 	private func unarchiveJSON<T: Decodable>(key: String) -> T? {
 		guard
 			let filepath = Bundle.main.path(forResource: key, ofType: "json"),

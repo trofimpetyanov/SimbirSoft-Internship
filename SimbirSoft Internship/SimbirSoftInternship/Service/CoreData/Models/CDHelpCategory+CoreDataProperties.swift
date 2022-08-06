@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension CDHelpCategory {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<CDHelpCategory> {

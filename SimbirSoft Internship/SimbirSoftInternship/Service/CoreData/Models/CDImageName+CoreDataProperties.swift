@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension CDImageName {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<CDImageName> {

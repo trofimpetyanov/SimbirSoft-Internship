@@ -36,6 +36,8 @@
 		818BCF4F289EBDD500F8304C /* CDPhoneNumber+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF45289EBDD500F8304C /* CDPhoneNumber+CoreDataProperties.swift */; };
 		818BCF50289EBDD500F8304C /* CDEventId+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF46289EBDD500F8304C /* CDEventId+CoreDataClass.swift */; };
 		818BCF51289EBDD500F8304C /* CDEventId+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF47289EBDD500F8304C /* CDEventId+CoreDataProperties.swift */; };
+		818BCF54289EDCB800F8304C /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF53289EDCB800F8304C /* APIRequest.swift */; };
+		818BCF56289EE00300F8304C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF55289EE00300F8304C /* APIService.swift */; };
 		81917F6D286DA99A00057891 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81917F6C286DA99A00057891 /* UIColor+CustomColors.swift */; };
 		81917F6F286DAB4100057891 /* AppearanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */; };
 		81DAC545287C5635000A109E /* OfficinaSansExtraBoldSCC.otf in Resources */ = {isa = PBXBuildFile; fileRef = 81DAC544287C5635000A109E /* OfficinaSansExtraBoldSCC.otf */; };
@@ -89,6 +91,8 @@
 		818BCF45289EBDD500F8304C /* CDPhoneNumber+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPhoneNumber+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		818BCF46289EBDD500F8304C /* CDEventId+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEventId+CoreDataClass.swift"; sourceTree = "<group>"; };
 		818BCF47289EBDD500F8304C /* CDEventId+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEventId+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		818BCF53289EDCB800F8304C /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		818BCF55289EE00300F8304C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		81917F6C286DA99A00057891 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConfigurator.swift; sourceTree = "<group>"; };
 		81D901D7286B7AF700AD6784 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = "/Users/trofimpetanov/Documents/GitHub/SimbirSoft-Internship/SimbirSoft Internship/.swiftlint.yml"; sourceTree = "<absolute>"; wrapsLines = 1; };
@@ -175,6 +179,15 @@
 			path = SimbirSoftInternship;
 			sourceTree = "<group>";
 		};
+		818BCF52289EDCA100F8304C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				818BCF53289EDCB800F8304C /* APIRequest.swift */,
+				818BCF55289EE00300F8304C /* APIService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		81917F6B286DA93800057891 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +223,7 @@
 				81F7031C2882AC6B00086B03 /* Data */,
 				81FE5906289D2032004FA640 /* CoreData */,
 				81FE5935289E72EE004FA640 /* Realm */,
+				818BCF52289EDCA100F8304C /* Networking */,
 				81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */,
 			);
 			path = Service;
@@ -488,6 +502,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				818BCF56289EE00300F8304C /* APIService.swift in Sources */,
 				816F50FB286B4530007F0723 /* HelpCategoryCollectionViewCell.swift in Sources */,
 				818BCF4E289EBDD500F8304C /* CDPhoneNumber+CoreDataClass.swift in Sources */,
 				818BCF4C289EBDD500F8304C /* CDHelpEvent+CoreDataClass.swift in Sources */,
@@ -495,6 +510,7 @@
 				816F50F5286B4209007F0723 /* DataManager.swift in Sources */,
 				818BCF49289EBDD500F8304C /* CDHelpCategory+CoreDataProperties.swift in Sources */,
 				818BCF51289EBDD500F8304C /* CDEventId+CoreDataProperties.swift in Sources */,
+				818BCF54289EDCB800F8304C /* APIRequest.swift in Sources */,
 				816F50F3286B365D007F0723 /* CustomTabBar.swift in Sources */,
 				816F50F1286B2C55007F0723 /* CustomTabBarController.swift in Sources */,
 				81917F6F286DAB4100057891 /* AppearanceConfigurator.swift in Sources */,
