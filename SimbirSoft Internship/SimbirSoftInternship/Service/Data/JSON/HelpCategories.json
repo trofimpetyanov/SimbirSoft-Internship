@@ -3,7 +3,7 @@
     "id": 0,
     "imageName": "children",
     "name": "Дети",
-    "eventsIds": [
+    "eventIds": [
       0,
       1
     ]
@@ -12,24 +12,24 @@
     "id": 1,
     "imageName": "adults",
     "name": "Взрослые",
-    "eventsIds": []
+    "eventIds": []
   },
   {
     "id": 2,
     "imageName": "seniors",
     "name": "Пожилые",
-    "eventsIds": []
+    "eventIds": []
   },
   {
     "id": 3,
     "imageName": "animals",
     "name": "Животные",
-    "eventsIds": []
+    "eventIds": []
   },
   {
     "id": 4,
     "imageName": "events",
     "name": "Мероприятия",
-    "eventsIds": []
+    "eventIds": []
   }
 ]

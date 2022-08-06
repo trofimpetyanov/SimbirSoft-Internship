@@ -1,6 +1,6 @@
 //
 //  DateFormatter+CustomFormatters.swift
-//  Block 1 – SimbirSoft Internship
+//  SimbirSoftInternship
 //
 //  Created by Trofim Petyanov on 15.07.2022.
 //

@@ -1,6 +1,6 @@
 //
 //  EventCollectionViewCell.swift
-//  Block 1 – SimbirSoft Internship
+//  SimbirSoftInternship
 //
 //  Created by Trofim Petyanov on 11.07.2022.
 //
@@ -146,6 +146,7 @@ final class EventCollectionViewCell: UICollectionViewCell {
         imageView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(4)
             $0.leading.trailing.equalToSuperview().inset(4)
+			$0.height.equalTo(230)
         }
         
         shadowImageView.snp.makeConstraints {

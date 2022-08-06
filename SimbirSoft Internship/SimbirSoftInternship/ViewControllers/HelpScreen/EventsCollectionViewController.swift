@@ -1,6 +1,6 @@
 //
 //  EventsCollectionViewController.swift
-//  Block 1 – SimbirSoft Internship
+//  SimbirSoftInternship
 //
 //  Created by Trofim Petyanov on 11.07.2022.
 //
@@ -18,10 +18,17 @@ final class EventsCollectionViewController: UICollectionViewController {
         flowLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         return flowLayout
     }()
+	
+	private lazy var activityIndicatorView: UIActivityIndicatorView = {
+		let activityIndicatorView = UIActivityIndicatorView()
+		activityIndicatorView.style = .gray
+		activityIndicatorView.hidesWhenStopped = true
+		activityIndicatorView.center = view.center
+		return activityIndicatorView
+	}()
     
     init?(coder: NSCoder, helpCategory: HelpCategory) {
         self.helpCategory = helpCategory
-        self.helpEvents = DataManager.shared.helpEvents.filter { helpCategory.eventsIds.contains($0.id) }
         super.init(coder: coder)
     }
     
@@ -30,18 +37,44 @@ final class EventsCollectionViewController: UICollectionViewController {
     }
     
     let helpCategory: HelpCategory
-    let helpEvents: [HelpEvent]
+	var helpEvents: [HelpEvent] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = helpCategory.name
-        
-        collectionView.backgroundColor = .backgroundGray
-        collectionView.collectionViewLayout = flowLayout
-    }
+		setup()
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		fetchHelpEvents()
+	}
+	
+	// MARK: – Helpers
+	func setup() {
+		title = helpCategory.name
+		
+		collectionView.backgroundColor = .backgroundGray
+		collectionView.collectionViewLayout = flowLayout
+		collectionView.alwaysBounceVertical = true
+		
+		view.addSubview(activityIndicatorView)
+		activityIndicatorView.startAnimating()
+	}
+	
+	func fetchHelpEvents() {
+		DispatchQueue.global(qos: .background).async {
+			self.helpEvents = DataManager.shared.helpEvents.filter { self.helpCategory.eventIds.contains($0.id) }
+			
+			DispatchQueue.main.async {
+				self.activityIndicatorView.stopAnimating()
+				self.collectionView.reloadData()
+			}
+		}
+	}
     
-    // MARK: UICollectionViewDataSource
+    // MARK: Data Source
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return helpEvents.count
     }
