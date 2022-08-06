@@ -1,6 +1,6 @@
 //
 //  HelpCategory.swift
-//  Block 1 – SimbirSoft Internship
+//  SimbirSoftInternship
 //
 //  Created by Trofim Petyanov on 28.06.2022.
 //
@@ -14,6 +14,7 @@ struct HelpCategory {
 	let eventIds: [Int]
 }
 
+// MARK: – Response Init
 extension HelpCategory {
 	init(helpCategoryResponse: HelpCategoryResponse) {
 		self.init(
@@ -25,6 +26,7 @@ extension HelpCategory {
 	}
 }
 
+// MARK: – Core Data Init
 extension HelpCategory {
 	init?(cdHelpCategory: CDHelpCategory) {
 		guard
@@ -42,6 +44,18 @@ extension HelpCategory {
 			name: name,
 			imageName: imageName,
 			eventIds: eventIds
+		)
+	}
+}
+
+// MARK: – Realm Init
+extension HelpCategory {
+	init(rsHelpCategory: RSHelpCategory) {
+		self.init(
+			id: rsHelpCategory.id,
+			name: rsHelpCategory.name,
+			imageName: rsHelpCategory.imageName,
+			eventIds: Array(rsHelpCategory.eventIds)
 		)
 	}
 }

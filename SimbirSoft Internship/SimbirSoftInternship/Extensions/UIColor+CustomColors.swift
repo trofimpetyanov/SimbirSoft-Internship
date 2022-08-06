@@ -1,6 +1,6 @@
 //
 //  UIColor+CustomColors.swift
-//  Block 1 – SimbirSoft Internship
+//  SimbirSoftInternship
 //
 //  Created by Trofim Petyanov on 30.06.2022.
 //

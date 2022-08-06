@@ -1,21 +1,23 @@
 //
 //  DataManager.swift
-//  Block 1 – SimbirSoft Internship
+//  SimbirSoftInternship
 //
 //  Created by Trofim Petyanov on 28.06.2022.
 //
 
-import Foundation
 import CoreData
+import RealmSwift
 import UIKit
 
 struct DataManager {
-    enum DataKey {
-        static let helpCategoryResponse = "HelpCategories"
-        static let helpEventResponse = "HelpEvents"
-    }
-    
-    static let shared = DataManager()
+	static let isCoreData = false
+	
+	enum DataKey {
+		static let helpCategoryResponse = "HelpCategories"
+		static let helpEventResponse = "HelpEvents"
+	}
+	
+	static let shared = DataManager()
 	
 	private var helpCategoriesResponse: [HelpCategoryResponse] {
 		unarchiveJSON(key: DataKey.helpCategoryResponse) ?? []
@@ -26,59 +28,83 @@ struct DataManager {
 	}
 	
 	var helpCategories: [HelpCategory] {
-		let coreDataStack = CoreDataStack(moduleName: "SimbirSoftInternship")
-		let managedContext = coreDataStack.managedContext
-		
-		let request: NSFetchRequest<CDHelpCategory> = CDHelpCategory.fetchRequest()
-		let helpCategoriesCount = (try? managedContext.count(for: request)) ?? 0
-		
-		if helpCategoriesCount > 0 {
-			do {
-				let result = try managedContext.fetch(request)
-				
-				return result.compactMap { HelpCategory(cdHelpCategory: $0) }.sorted(by: { $0.id < $1.id })
-			} catch let error as NSError {
-				print("Could not fetch \(error), \(error.userInfo)")
-				
-				return []
+		if DataManager.isCoreData {
+			let coreDataStack = CoreDataStack(moduleName: "SimbirSoftInternship")
+			let managedContext = coreDataStack.managedContext
+			
+			let request: NSFetchRequest<CDHelpCategory> = CDHelpCategory.fetchRequest()
+			let cdHelpCategoriesCount = (try? managedContext.count(for: request)) ?? 0
+			
+			if cdHelpCategoriesCount > 0 {
+				do {
+					let result = try managedContext.fetch(request)
+					
+					return result.compactMap { HelpCategory(cdHelpCategory: $0) }.sorted(by: { $0.id < $1.id })
+				} catch let error as NSError {
+					print("Could not fetch \(error), \(error.userInfo)")
+					
+					return []
+				}
 			}
+			
+			insertCDHelpCategories(into: managedContext)
+			coreDataStack.saveContext()
+		} else {
+			guard let realm = try? Realm() else { return [] }
+			
+			let rsHelpCategories = realm.objects(RSHelpCategory.self)
+			
+			if !rsHelpCategories.isEmpty {
+				
+				return rsHelpCategories.map { HelpCategory(rsHelpCategory: $0) }
+			}
+			
+			insertRSHelpCategories()
 		}
-		
-		insertHelpCategories(into: managedContext)
-		coreDataStack.saveContext()
 		
 		return helpCategoriesResponse.map { HelpCategory(helpCategoryResponse: $0) }.sorted(by: { $0.id < $1.id })
 	}
 	
 	var helpEvents: [HelpEvent] {
-		let coreDataStack = CoreDataStack(moduleName: "SimbirSoftInternship")
-		let managedContext = coreDataStack.managedContext
-		
-		let request: NSFetchRequest<CDHelpEvent> = CDHelpEvent.fetchRequest()
-		let helpEventCount = (try? managedContext.count(for: request)) ?? 0
-		
-		if helpEventCount > 0 {
-			do {
-				let result = try managedContext.fetch(request)
-				
-				return result.compactMap { HelpEvent(cdHelpEvent: $0) }.sorted(by: { $0.id < $1.id })
-			} catch let error as NSError {
-				print("Could not fetch \(error), \(error.userInfo)")
-				
-				return []
+		if DataManager.isCoreData {
+			let coreDataStack = CoreDataStack(moduleName: "SimbirSoftInternship")
+			let managedContext = coreDataStack.managedContext
+			
+			let request: NSFetchRequest<CDHelpEvent> = CDHelpEvent.fetchRequest()
+			let helpEventCount = (try? managedContext.count(for: request)) ?? 0
+			
+			if helpEventCount > 0 {
+				do {
+					let result = try managedContext.fetch(request)
+					
+					return result.compactMap { HelpEvent(cdHelpEvent: $0) }.sorted(by: { $0.id < $1.id })
+				} catch let error as NSError {
+					print("Could not fetch \(error), \(error.userInfo)")
+					
+					return []
+				}
 			}
+			
+			insertCDHelpEvents(into: managedContext)
+			coreDataStack.saveContext()
+		} else {
+			guard let realm = try? Realm() else { return [] }
+			
+			let rsHelpEvents = realm.objects(RSHelpEvent.self)
+			
+			if !rsHelpEvents.isEmpty {
+				return rsHelpEvents.map { HelpEvent(rsHelpEvent: $0) }
+			}
+			
+			insertRSHelpEvents()
 		}
 		
-		insertHelpEvents(into: managedContext)
-		coreDataStack.saveContext()
-		
 		return helpEventsResponse.map { HelpEvent(helpEventResponse: $0) }.sorted(by: { $0.id < $1.id })
-		
 	}
-    
-    private init() { }
 	
-	private func insertHelpCategories(into managedContext: NSManagedObjectContext) {
+	private init() { }
+	
+	private func insertCDHelpCategories(into managedContext: NSManagedObjectContext) {
 		for helpCategoryResponse in helpCategoriesResponse {
 			let entity = NSEntityDescription.entity(forEntityName: "CDHelpCategory", in: managedContext)!
 			let cdHelpCategory = CDHelpCategory(entity: entity, insertInto: managedContext)
@@ -98,7 +124,7 @@ struct DataManager {
 		}
 	}
 	
-	private func insertHelpEvents(into managedContext: NSManagedObjectContext) {
+	private func insertCDHelpEvents(into managedContext: NSManagedObjectContext) {
 		for helpEventResponse in helpEventsResponse {
 			let entity = NSEntityDescription.entity(forEntityName: "CDHelpEvent", in: managedContext)!
 			let cdHelpEvent = CDHelpEvent(entity: entity, insertInto: managedContext)
@@ -134,24 +160,48 @@ struct DataManager {
 			}
 		}
 	}
-    
-    private func unarchiveJSON<T: Decodable>(key: String) -> T? {
-        guard
-            let filepath = Bundle.main.path(forResource: key, ofType: "json"),
-            let string = try? String(contentsOfFile: filepath),
-            let data = string.data(using: .utf8)
-        else {
-            print("Error while reading a JSON file")
-            
-            return nil
-        }
-        
-        do {
-            return try JSONDecoder().decode(T.self, from: data)
-        } catch {
-            print("Error while decoding a JSON file")
-            
-            return nil
-        }
-    }
+	
+	private func insertRSHelpCategories() {
+		for helpCategoryResponse in helpCategoriesResponse {
+			let rsHelpCategory = RSHelpCategory(helpCategoryResponse: helpCategoryResponse)
+			
+			guard let realm = try? Realm() else { return }
+			
+			try? realm.write {
+				realm.add(rsHelpCategory)
+			}
+		}
+	}
+	
+	private func insertRSHelpEvents() {
+		for helpEventResponse in helpEventsResponse {
+			let rsHelpEvent = RSHelpEvent(helpEventResponse: helpEventResponse)
+			
+			guard let realm = try? Realm() else { return }
+			
+			try? realm.write {
+				realm.add(rsHelpEvent)
+			}
+		}
+	}
+	
+	private func unarchiveJSON<T: Decodable>(key: String) -> T? {
+		guard
+			let filepath = Bundle.main.path(forResource: key, ofType: "json"),
+			let string = try? String(contentsOfFile: filepath),
+			let data = string.data(using: .utf8)
+		else {
+			print("Error while reading a JSON file")
+			
+			return nil
+		}
+		
+		do {
+			return try JSONDecoder().decode(T.self, from: data)
+		} catch {
+			print("Error while decoding a JSON file")
+			
+			return nil
+		}
+	}
 }

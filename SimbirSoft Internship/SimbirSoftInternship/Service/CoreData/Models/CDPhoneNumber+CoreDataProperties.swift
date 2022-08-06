@@ -2,7 +2,7 @@
 //  CDPhoneNumber+CoreDataProperties.swift
 //  SimbirSoftInternship
 //
-//  Created by Trofim Petyanov on 05.08.2022.
+//  Created by Trofim Petyanov on 06.08.2022.
 //
 //
 
@@ -17,5 +17,6 @@ extension CDPhoneNumber {
     }
 
     @NSManaged public var phoneNumber: String?
+    @NSManaged public var helpEvent: CDHelpEvent?
 
 }
