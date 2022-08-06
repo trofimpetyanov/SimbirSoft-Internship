@@ -1,6 +1,6 @@
 //
 //  HelpCategoriesCollectionViewController.swift
-//  Block 1 – SimbirSoft Internship
+//  SimbirSoftInternship
 //
 //  Created by Trofim Petyanov on 28.06.2022.
 //
@@ -50,7 +50,6 @@ final class HelpCategoriesViewController: UIViewController, UICollectionViewData
 		collectionView.alwaysBounceVertical = true
 		
 		collectionView.backgroundView = activityIndicatorView
-		activityIndicatorView.startAnimating()
 	}
 	
 	func fetchHelpCategories() {

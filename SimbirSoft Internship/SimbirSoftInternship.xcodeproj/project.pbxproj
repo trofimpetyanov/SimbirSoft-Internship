@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003EE360778C513F4C1D4896 /* Pods_SimbirSoftInternship.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F75E60AE7D01213896BC2A9 /* Pods_SimbirSoftInternship.framework */; };
 		810B3599286B519700676106 /* HelpCategoriesCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3598286B519700676106 /* HelpCategoriesCollectionHeaderView.swift */; };
 		814B8851286DA52500B03EA4 /* HelpScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B8850286DA52500B03EA4 /* HelpScreen.storyboard */; };
 		814B8853286DA60600B03EA4 /* NewsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B8852286DA60600B03EA4 /* NewsScreen.storyboard */; };
@@ -24,6 +25,17 @@
 		816F50F7286B4328007F0723 /* HelpCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F50F6286B4328007F0723 /* HelpCategory.swift */; };
 		816F50F9286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F50F8286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift */; };
 		816F50FB286B4530007F0723 /* HelpCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F50FA286B4530007F0723 /* HelpCategoryCollectionViewCell.swift */; };
+		818BCF3D289EB64300F8304C /* RSHelpEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF3C289EB64300F8304C /* RSHelpEvent.swift */; };
+		818BCF48289EBDD500F8304C /* CDHelpCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF3E289EBDD500F8304C /* CDHelpCategory+CoreDataClass.swift */; };
+		818BCF49289EBDD500F8304C /* CDHelpCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF3F289EBDD500F8304C /* CDHelpCategory+CoreDataProperties.swift */; };
+		818BCF4A289EBDD500F8304C /* CDImageName+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF40289EBDD500F8304C /* CDImageName+CoreDataClass.swift */; };
+		818BCF4B289EBDD500F8304C /* CDImageName+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF41289EBDD500F8304C /* CDImageName+CoreDataProperties.swift */; };
+		818BCF4C289EBDD500F8304C /* CDHelpEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF42289EBDD500F8304C /* CDHelpEvent+CoreDataClass.swift */; };
+		818BCF4D289EBDD500F8304C /* CDHelpEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF43289EBDD500F8304C /* CDHelpEvent+CoreDataProperties.swift */; };
+		818BCF4E289EBDD500F8304C /* CDPhoneNumber+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF44289EBDD500F8304C /* CDPhoneNumber+CoreDataClass.swift */; };
+		818BCF4F289EBDD500F8304C /* CDPhoneNumber+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF45289EBDD500F8304C /* CDPhoneNumber+CoreDataProperties.swift */; };
+		818BCF50289EBDD500F8304C /* CDEventId+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF46289EBDD500F8304C /* CDEventId+CoreDataClass.swift */; };
+		818BCF51289EBDD500F8304C /* CDEventId+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BCF47289EBDD500F8304C /* CDEventId+CoreDataProperties.swift */; };
 		81917F6D286DA99A00057891 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81917F6C286DA99A00057891 /* UIColor+CustomColors.swift */; };
 		81917F6F286DAB4100057891 /* AppearanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */; };
 		81DAC545287C5635000A109E /* OfficinaSansExtraBoldSCC.otf in Resources */ = {isa = PBXBuildFile; fileRef = 81DAC544287C5635000A109E /* OfficinaSansExtraBoldSCC.otf */; };
@@ -39,23 +51,14 @@
 		81FE5905289D131B004FA640 /* HelpEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5904289D131B004FA640 /* HelpEventResponse.swift */; };
 		81FE5909289D206A004FA640 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5908289D206A004FA640 /* CoreDataStack.swift */; };
 		81FE590C289D20AC004FA640 /* SimbirSoftInternship.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81FE590A289D20AC004FA640 /* SimbirSoftInternship.xcdatamodeld */; };
-		81FE592B289D342F004FA640 /* CDEventId+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5921289D342F004FA640 /* CDEventId+CoreDataClass.swift */; };
-		81FE592C289D342F004FA640 /* CDEventId+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5922289D342F004FA640 /* CDEventId+CoreDataProperties.swift */; };
-		81FE592D289D342F004FA640 /* CDHelpEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5923289D342F004FA640 /* CDHelpEvent+CoreDataClass.swift */; };
-		81FE592E289D342F004FA640 /* CDHelpEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5924289D342F004FA640 /* CDHelpEvent+CoreDataProperties.swift */; };
-		81FE592F289D342F004FA640 /* CDHelpCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5925289D342F004FA640 /* CDHelpCategory+CoreDataClass.swift */; };
-		81FE5930289D342F004FA640 /* CDHelpCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5926289D342F004FA640 /* CDHelpCategory+CoreDataProperties.swift */; };
-		81FE5931289D342F004FA640 /* CDPhoneNumber+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5927289D342F004FA640 /* CDPhoneNumber+CoreDataClass.swift */; };
-		81FE5932289D342F004FA640 /* CDPhoneNumber+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5928289D342F004FA640 /* CDPhoneNumber+CoreDataProperties.swift */; };
-		81FE5933289D342F004FA640 /* CDImageName+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5929289D342F004FA640 /* CDImageName+CoreDataClass.swift */; };
-		81FE5934289D342F004FA640 /* CDImageName+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE592A289D342F004FA640 /* CDImageName+CoreDataProperties.swift */; };
-		905008915877C486E5AE6DE7 /* Pods_Block_1___SimbirSoft_Internship.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A47BB5F837F2B995C76A0B3 /* Pods_Block_1___SimbirSoft_Internship.framework */; };
+		81FE5937289E7473004FA640 /* RSHelpCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5936289E7473004FA640 /* RSHelpCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0982C9E3AFC6899A67250447 /* Pods-Block 1 – SimbirSoft Internship.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Block 1 – SimbirSoft Internship.release.xcconfig"; path = "Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship.release.xcconfig"; sourceTree = "<group>"; };
+		111BF04D776117CDE8FEE053 /* Pods-SimbirSoftInternship.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimbirSoftInternship.debug.xcconfig"; path = "Target Support Files/Pods-SimbirSoftInternship/Pods-SimbirSoftInternship.debug.xcconfig"; sourceTree = "<group>"; };
 		14E2020FAA62B40ED7FF51AA /* Pods-Block 1 – SimbirSoft Internship.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Block 1 – SimbirSoft Internship.debug.xcconfig"; path = "Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship.debug.xcconfig"; sourceTree = "<group>"; };
-		4A47BB5F837F2B995C76A0B3 /* Pods_Block_1___SimbirSoft_Internship.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Block_1___SimbirSoft_Internship.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F75E60AE7D01213896BC2A9 /* Pods_SimbirSoftInternship.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimbirSoftInternship.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		810B3598286B519700676106 /* HelpCategoriesCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoriesCollectionHeaderView.swift; sourceTree = "<group>"; };
 		814B8850286DA52500B03EA4 /* HelpScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpScreen.storyboard; sourceTree = "<group>"; };
 		814B8852286DA60600B03EA4 /* NewsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsScreen.storyboard; sourceTree = "<group>"; };
@@ -75,6 +78,17 @@
 		816F50F6286B4328007F0723 /* HelpCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategory.swift; sourceTree = "<group>"; };
 		816F50F8286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoriesCollectionViewController.swift; sourceTree = "<group>"; };
 		816F50FA286B4530007F0723 /* HelpCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		818BCF3C289EB64300F8304C /* RSHelpEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSHelpEvent.swift; sourceTree = "<group>"; };
+		818BCF3E289EBDD500F8304C /* CDHelpCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDHelpCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		818BCF3F289EBDD500F8304C /* CDHelpCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDHelpCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		818BCF40289EBDD500F8304C /* CDImageName+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDImageName+CoreDataClass.swift"; sourceTree = "<group>"; };
+		818BCF41289EBDD500F8304C /* CDImageName+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDImageName+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		818BCF42289EBDD500F8304C /* CDHelpEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDHelpEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		818BCF43289EBDD500F8304C /* CDHelpEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDHelpEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		818BCF44289EBDD500F8304C /* CDPhoneNumber+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPhoneNumber+CoreDataClass.swift"; sourceTree = "<group>"; };
+		818BCF45289EBDD500F8304C /* CDPhoneNumber+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPhoneNumber+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		818BCF46289EBDD500F8304C /* CDEventId+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEventId+CoreDataClass.swift"; sourceTree = "<group>"; };
+		818BCF47289EBDD500F8304C /* CDEventId+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEventId+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		81917F6C286DA99A00057891 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConfigurator.swift; sourceTree = "<group>"; };
 		81D901D7286B7AF700AD6784 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = "/Users/trofimpetanov/Documents/GitHub/SimbirSoft-Internship/SimbirSoft Internship/.swiftlint.yml"; sourceTree = "<absolute>"; wrapsLines = 1; };
@@ -90,16 +104,8 @@
 		81FE5904289D131B004FA640 /* HelpEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpEventResponse.swift; sourceTree = "<group>"; };
 		81FE5908289D206A004FA640 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		81FE590B289D20AC004FA640 /* SimbirSoftInternship.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimbirSoftInternship.xcdatamodel; sourceTree = "<group>"; };
-		81FE5921289D342F004FA640 /* CDEventId+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEventId+CoreDataClass.swift"; sourceTree = "<group>"; };
-		81FE5922289D342F004FA640 /* CDEventId+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDEventId+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		81FE5923289D342F004FA640 /* CDHelpEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDHelpEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
-		81FE5924289D342F004FA640 /* CDHelpEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDHelpEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		81FE5925289D342F004FA640 /* CDHelpCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDHelpCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
-		81FE5926289D342F004FA640 /* CDHelpCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDHelpCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		81FE5927289D342F004FA640 /* CDPhoneNumber+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPhoneNumber+CoreDataClass.swift"; sourceTree = "<group>"; };
-		81FE5928289D342F004FA640 /* CDPhoneNumber+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPhoneNumber+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		81FE5929289D342F004FA640 /* CDImageName+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDImageName+CoreDataClass.swift"; sourceTree = "<group>"; };
-		81FE592A289D342F004FA640 /* CDImageName+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDImageName+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		81FE5936289E7473004FA640 /* RSHelpCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSHelpCategory.swift; sourceTree = "<group>"; };
+		A4E00AC7A1D4C6836511DD76 /* Pods-SimbirSoftInternship.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimbirSoftInternship.release.xcconfig"; path = "Target Support Files/Pods-SimbirSoftInternship/Pods-SimbirSoftInternship.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				905008915877C486E5AE6DE7 /* Pods_Block_1___SimbirSoft_Internship.framework in Frameworks */,
+				003EE360778C513F4C1D4896 /* Pods_SimbirSoftInternship.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +123,7 @@
 		2C32168B0A715490E2D3F558 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4A47BB5F837F2B995C76A0B3 /* Pods_Block_1___SimbirSoft_Internship.framework */,
+				3F75E60AE7D01213896BC2A9 /* Pods_SimbirSoftInternship.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -203,6 +209,7 @@
 				816F50F4286B4209007F0723 /* DataManager.swift */,
 				81F7031C2882AC6B00086B03 /* Data */,
 				81FE5906289D2032004FA640 /* CoreData */,
+				81FE5935289E72EE004FA640 /* Realm */,
 				81917F6E286DAB4100057891 /* AppearanceConfigurator.swift */,
 			);
 			path = Service;
@@ -305,18 +312,27 @@
 		81FE5907289D2044004FA640 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				81FE5921289D342F004FA640 /* CDEventId+CoreDataClass.swift */,
-				81FE5922289D342F004FA640 /* CDEventId+CoreDataProperties.swift */,
-				81FE5923289D342F004FA640 /* CDHelpEvent+CoreDataClass.swift */,
-				81FE5924289D342F004FA640 /* CDHelpEvent+CoreDataProperties.swift */,
-				81FE5925289D342F004FA640 /* CDHelpCategory+CoreDataClass.swift */,
-				81FE5926289D342F004FA640 /* CDHelpCategory+CoreDataProperties.swift */,
-				81FE5927289D342F004FA640 /* CDPhoneNumber+CoreDataClass.swift */,
-				81FE5928289D342F004FA640 /* CDPhoneNumber+CoreDataProperties.swift */,
-				81FE5929289D342F004FA640 /* CDImageName+CoreDataClass.swift */,
-				81FE592A289D342F004FA640 /* CDImageName+CoreDataProperties.swift */,
+				818BCF3E289EBDD500F8304C /* CDHelpCategory+CoreDataClass.swift */,
+				818BCF3F289EBDD500F8304C /* CDHelpCategory+CoreDataProperties.swift */,
+				818BCF40289EBDD500F8304C /* CDImageName+CoreDataClass.swift */,
+				818BCF41289EBDD500F8304C /* CDImageName+CoreDataProperties.swift */,
+				818BCF42289EBDD500F8304C /* CDHelpEvent+CoreDataClass.swift */,
+				818BCF43289EBDD500F8304C /* CDHelpEvent+CoreDataProperties.swift */,
+				818BCF44289EBDD500F8304C /* CDPhoneNumber+CoreDataClass.swift */,
+				818BCF45289EBDD500F8304C /* CDPhoneNumber+CoreDataProperties.swift */,
+				818BCF46289EBDD500F8304C /* CDEventId+CoreDataClass.swift */,
+				818BCF47289EBDD500F8304C /* CDEventId+CoreDataProperties.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		81FE5935289E72EE004FA640 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				81FE5936289E7473004FA640 /* RSHelpCategory.swift */,
+				818BCF3C289EB64300F8304C /* RSHelpEvent.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		EA2BBD07EED20E299DACB359 /* Pods */ = {
@@ -324,6 +340,8 @@
 			children = (
 				14E2020FAA62B40ED7FF51AA /* Pods-Block 1 – SimbirSoft Internship.debug.xcconfig */,
 				0982C9E3AFC6899A67250447 /* Pods-Block 1 – SimbirSoft Internship.release.xcconfig */,
+				111BF04D776117CDE8FEE053 /* Pods-SimbirSoftInternship.debug.xcconfig */,
+				A4E00AC7A1D4C6836511DD76 /* Pods-SimbirSoftInternship.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -413,15 +431,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SimbirSoftInternship/Pods-SimbirSoftInternship-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SimbirSoftInternship/Pods-SimbirSoftInternship-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Block 1 – SimbirSoft Internship/Pods-Block 1 – SimbirSoft Internship-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimbirSoftInternship/Pods-SimbirSoftInternship-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		52D09C4059BC427B58D0BE5F /* [CP] Check Pods Manifest.lock */ = {
@@ -439,7 +457,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Block 1 – SimbirSoft Internship-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SimbirSoftInternship-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -471,34 +489,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				816F50FB286B4530007F0723 /* HelpCategoryCollectionViewCell.swift in Sources */,
+				818BCF4E289EBDD500F8304C /* CDPhoneNumber+CoreDataClass.swift in Sources */,
+				818BCF4C289EBDD500F8304C /* CDHelpEvent+CoreDataClass.swift in Sources */,
 				816F50F9286B44F3007F0723 /* HelpCategoriesCollectionViewController.swift in Sources */,
-				81FE5931289D342F004FA640 /* CDPhoneNumber+CoreDataClass.swift in Sources */,
 				816F50F5286B4209007F0723 /* DataManager.swift in Sources */,
+				818BCF49289EBDD500F8304C /* CDHelpCategory+CoreDataProperties.swift in Sources */,
+				818BCF51289EBDD500F8304C /* CDEventId+CoreDataProperties.swift in Sources */,
 				816F50F3286B365D007F0723 /* CustomTabBar.swift in Sources */,
-				81FE592C289D342F004FA640 /* CDEventId+CoreDataProperties.swift in Sources */,
 				816F50F1286B2C55007F0723 /* CustomTabBarController.swift in Sources */,
 				81917F6F286DAB4100057891 /* AppearanceConfigurator.swift in Sources */,
 				81DAC57728800ECA000A109E /* DetailEventViewController.swift in Sources */,
+				818BCF50289EBDD500F8304C /* CDEventId+CoreDataClass.swift in Sources */,
+				81FE5937289E7473004FA640 /* RSHelpCategory.swift in Sources */,
 				810B3599286B519700676106 /* HelpCategoriesCollectionHeaderView.swift in Sources */,
-				81FE5930289D342F004FA640 /* CDHelpCategory+CoreDataProperties.swift in Sources */,
 				81FE5909289D206A004FA640 /* CoreDataStack.swift in Sources */,
-				81FE592B289D342F004FA640 /* CDEventId+CoreDataClass.swift in Sources */,
+				818BCF4D289EBDD500F8304C /* CDHelpEvent+CoreDataProperties.swift in Sources */,
 				81FE5905289D131B004FA640 /* HelpEventResponse.swift in Sources */,
 				81DAC547287CB3D6000A109E /* EventsCollectionViewController.swift in Sources */,
 				81917F6D286DA99A00057891 /* UIColor+CustomColors.swift in Sources */,
 				81FE5903289D12FE004FA640 /* HelpCategoryResponse.swift in Sources */,
 				81DAC54B287CB64E000A109E /* EventCollectionViewCell.swift in Sources */,
 				816525AE285DFA78005838A6 /* AppDelegate.swift in Sources */,
+				818BCF4B289EBDD500F8304C /* CDImageName+CoreDataProperties.swift in Sources */,
+				818BCF48289EBDD500F8304C /* CDHelpCategory+CoreDataClass.swift in Sources */,
 				81DAC54D287CC5D1000A109E /* HelpEvent.swift in Sources */,
-				81FE592D289D342F004FA640 /* CDHelpEvent+CoreDataClass.swift in Sources */,
-				81FE5934289D342F004FA640 /* CDImageName+CoreDataProperties.swift in Sources */,
 				816525B0285DFA78005838A6 /* SceneDelegate.swift in Sources */,
-				81FE592E289D342F004FA640 /* CDHelpEvent+CoreDataProperties.swift in Sources */,
 				81FE590C289D20AC004FA640 /* SimbirSoftInternship.xcdatamodeld in Sources */,
-				81FE592F289D342F004FA640 /* CDHelpCategory+CoreDataClass.swift in Sources */,
+				818BCF4A289EBDD500F8304C /* CDImageName+CoreDataClass.swift in Sources */,
+				818BCF4F289EBDD500F8304C /* CDPhoneNumber+CoreDataProperties.swift in Sources */,
 				81F7031B2881C32100086B03 /* DateFormatter+CustomFormatters.swift in Sources */,
-				81FE5933289D342F004FA640 /* CDImageName+CoreDataClass.swift in Sources */,
-				81FE5932289D342F004FA640 /* CDPhoneNumber+CoreDataProperties.swift in Sources */,
+				818BCF3D289EB64300F8304C /* RSHelpEvent.swift in Sources */,
 				816F50F7286B4328007F0723 /* HelpCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,7 +661,7 @@
 		};
 		816525BF285DFA79005838A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14E2020FAA62B40ED7FF51AA /* Pods-Block 1 – SimbirSoft Internship.debug.xcconfig */;
+			baseConfigurationReference = 111BF04D776117CDE8FEE053 /* Pods-SimbirSoftInternship.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -672,7 +692,7 @@
 		};
 		816525C0285DFA79005838A6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0982C9E3AFC6899A67250447 /* Pods-Block 1 – SimbirSoft Internship.release.xcconfig */;
+			baseConfigurationReference = A4E00AC7A1D4C6836511DD76 /* Pods-SimbirSoftInternship.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

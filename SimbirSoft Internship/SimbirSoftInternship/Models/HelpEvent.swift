@@ -1,6 +1,6 @@
 //
 //  HelpEvent.swift
-//  Block 1 – SimbirSoft Internship
+//  SimbirSoftInternship
 //
 //  Created by Trofim Petyanov on 12.07.2022.
 //
@@ -29,6 +29,7 @@ struct HelpEvent {
 	let peopleCount: Int
 }
 
+// MARK: – Response Init
 extension HelpEvent {
 	init(helpEventResponse: HelpEventResponse) {
 		self.init(
@@ -49,6 +50,7 @@ extension HelpEvent {
 	}
 }
 
+// MARK: – Core Data Init
 extension HelpEvent {
 	init?(cdHelpEvent: CDHelpEvent) {
 		guard
@@ -83,6 +85,27 @@ extension HelpEvent {
 			description: description,
 			organizationLink: organizationLink,
 			peopleCount: Int(cdHelpEvent.peopleCount)
+		)
+	}
+}
+
+// MARK: – Realm Init
+extension HelpEvent {
+	init(rsHelpEvent: RSHelpEvent) {
+		self.init(
+			id: rsHelpEvent.id,
+			name: rsHelpEvent.name,
+			shortDescription: rsHelpEvent.shortDetail,
+			startDate: rsHelpEvent.startDate as Date,
+			endDate: rsHelpEvent.endDate as Date,
+			fundName: rsHelpEvent.fundName,
+			address: rsHelpEvent.address,
+			phoneNumbers: Array(rsHelpEvent.phoneNumbers),
+			contactLink: rsHelpEvent.contactLink,
+			imageNames: Array(rsHelpEvent.imageNames),
+			description: rsHelpEvent.detail,
+			organizationLink: rsHelpEvent.organizationLink,
+			peopleCount: rsHelpEvent.peopleCount
 		)
 	}
 }

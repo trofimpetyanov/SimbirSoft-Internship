@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  Block 1 – SimbirSoft Internship
+//  SimbirSoftInternship
 //
 //  Created by Trofim Petyanov on 18.06.2022.
 //

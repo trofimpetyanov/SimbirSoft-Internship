@@ -1,6 +1,6 @@
 //
 //  DetailEventViewController.swift
-//  Block 1 – SimbirSoft Internship
+//  SimbirSoftInternship
 //
 //  Created by Trofim Petyanov on 14.07.2022.
 //

@@ -2,7 +2,7 @@
 //  CDEventId+CoreDataProperties.swift
 //  SimbirSoftInternship
 //
-//  Created by Trofim Petyanov on 05.08.2022.
+//  Created by Trofim Petyanov on 06.08.2022.
 //
 //
 
@@ -17,5 +17,6 @@ extension CDEventId {
     }
 
     @NSManaged public var id: Int32
+    @NSManaged public var helpCategory: CDHelpCategory?
 
 }

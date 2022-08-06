@@ -1,6 +1,6 @@
 //
 //  EventCollectionViewCell.swift
-//  Block 1 – SimbirSoft Internship
+//  SimbirSoftInternship
 //
 //  Created by Trofim Petyanov on 11.07.2022.
 //
