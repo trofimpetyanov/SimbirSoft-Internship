@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HelpEventResponse {
+struct HelpEventResponse: Codable {
 	let id: Int
 	let name: String
 	let shortDescription: String
@@ -28,5 +28,3 @@ struct HelpEventResponse {
 	
 	let peopleCount: Int
 }
-
-extension HelpEventResponse: Codable { }

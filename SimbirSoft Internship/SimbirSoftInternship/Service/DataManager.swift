@@ -8,6 +8,7 @@
 import CoreData
 import RealmSwift
 import UIKit
+import Alamofire
 
 struct DataManager {
 	// MARK: – Data Key
@@ -18,6 +19,7 @@ struct DataManager {
 	
 	// MARK: – Properties
 	static let isCoreData = true
+	static let isURLSession = true
 	static let shared = DataManager()
 	
 	private var helpCategoriesResponse: [HelpCategoryResponse] {
@@ -28,139 +30,209 @@ struct DataManager {
 		unarchiveJSON(key: DataKey.helpEventResponse) ?? []
 	}
 	
-	var helpCategories: [HelpCategory] {
+	func helpCategories(completion: @escaping ([HelpCategory]) -> Void) {
 		if DataManager.isCoreData {
 			let coreDataStack = CoreDataStack(moduleName: "SimbirSoftInternship")
 			let managedContext = coreDataStack.managedContext
-			
+
 			let request: NSFetchRequest<CDHelpCategory> = CDHelpCategory.fetchRequest()
 			let cdHelpCategoriesCount = (try? managedContext.count(for: request)) ?? 0
-			
+
 			if cdHelpCategoriesCount > 0 {
 				do {
 					let result = try managedContext.fetch(request)
-					
-					return result.compactMap { HelpCategory(cdHelpCategory: $0) }.sorted(by: { $0.id < $1.id })
+					let helpCategories = result.compactMap { HelpCategory(cdHelpCategory: $0) }.sorted(by: { $0.id < $1.id })
+
+					completion(helpCategories)
 				} catch let error as NSError {
 					print("Could not fetch \(error), \(error.userInfo)")
-					
-					return []
+
+					completion([])
 				}
 			}
-			
+
 			insertCDHelpCategories(into: managedContext)
 			coreDataStack.saveContext()
 		} else {
-			guard let realm = try? Realm() else { return [] }
-			
-			let rsHelpCategories = realm.objects(RSHelpCategory.self)
-			
-			if !rsHelpCategories.isEmpty {
-				return rsHelpCategories.map { HelpCategory(rsHelpCategory: $0) }
+			guard let realm = try? Realm() else {
+				completion([])
+
+				return
 			}
-			
+
+			let rsHelpCategories = realm.objects(RSHelpCategory.self)
+
+			if !rsHelpCategories.isEmpty {
+				let helpCategories = rsHelpCategories.map { HelpCategory(rsHelpCategory: $0) } as [HelpCategory]
+
+				completion(helpCategories)
+			}
+
 			insertRSHelpCategories()
 		}
 		
-		let fetchedHelpCategories = fetchHelpCategories()
-		
-		if !fetchedHelpCategories.isEmpty {
-			return fetchedHelpCategories.map { HelpCategory(helpCategoryResponse: $0) }.sorted(by: { $0.id < $1.id })
+		if DataManager.isURLSession {
+			fetchHelpCategories { fetchedHelpCategories in
+				if !fetchedHelpCategories.isEmpty {
+					let result = fetchedHelpCategories.map { HelpCategory(helpCategoryResponse: $0) }.sorted(by: { $0.id < $1.id })
+					
+					completion(result)
+				} else {
+					let result = helpCategoriesResponse.map { HelpCategory(helpCategoryResponse: $0) }.sorted(by: { $0.id < $1.id })
+					
+					completion(result)
+				}
+			}
 		} else {
-			return helpCategoriesResponse.map { HelpCategory(helpCategoryResponse: $0) }.sorted(by: { $0.id < $1.id })
+			fetchHelpCategoriesAF { fetchedHelpCategories in
+				if !fetchedHelpCategories.isEmpty {
+					let result = fetchedHelpCategories.map { HelpCategory(helpCategoryResponse: $0) }.sorted(by: { $0.id < $1.id })
+					
+					completion(result)
+				} else {
+					let result = helpCategoriesResponse.map { HelpCategory(helpCategoryResponse: $0) }.sorted(by: { $0.id < $1.id })
+					
+					completion(result)
+				}
+			}
 		}
 	}
 	
-	var helpEvents: [HelpEvent] {
+	func helpEvents(completion: @escaping ([HelpEvent]) -> Void) {
 		if DataManager.isCoreData {
 			let coreDataStack = CoreDataStack(moduleName: "SimbirSoftInternship")
 			let managedContext = coreDataStack.managedContext
-			
+
 			let request: NSFetchRequest<CDHelpEvent> = CDHelpEvent.fetchRequest()
 			let helpEventCount = (try? managedContext.count(for: request)) ?? 0
-			
+
 			if helpEventCount > 0 {
 				do {
 					let result = try managedContext.fetch(request)
-					
-					return result.compactMap { HelpEvent(cdHelpEvent: $0) }.sorted(by: { $0.id < $1.id })
+					let helpEvents = result.compactMap { HelpEvent(cdHelpEvent: $0) }.sorted(by: { $0.id < $1.id })
+
+					completion(helpEvents)
 				} catch let error as NSError {
 					print("Could not fetch \(error), \(error.userInfo)")
-					
-					return []
+
+					completion([])
 				}
 			}
-			
+
 			insertCDHelpEvents(into: managedContext)
 			coreDataStack.saveContext()
 		} else {
-			guard let realm = try? Realm() else { return [] }
-			
-			let rsHelpEvents = realm.objects(RSHelpEvent.self)
-			
-			if !rsHelpEvents.isEmpty {
-				return rsHelpEvents.map { HelpEvent(rsHelpEvent: $0) }
+			guard let realm = try? Realm() else {
+				completion([])
+
+				return
 			}
-			
+
+			let rsHelpEvents = realm.objects(RSHelpEvent.self)
+
+			if !rsHelpEvents.isEmpty {
+				let helpEvents = rsHelpEvents.map { HelpEvent(rsHelpEvent: $0) } as [HelpEvent]
+
+				completion(helpEvents)
+			}
+
 			insertRSHelpEvents()
 		}
 		
-		let fetchedHelpEvents = fetchHelpEvents()
-		
-		if !fetchedHelpEvents.isEmpty {
-			return fetchedHelpEvents.map { HelpEvent(helpEventResponse: $0) }.sorted(by: { $0.id < $1.id })
+		if DataManager.isURLSession {
+			fetchHelpEvents { fetchedHelpEvents in
+				if !fetchedHelpEvents.isEmpty {
+					let helpEvents = fetchedHelpEvents.map { HelpEvent(helpEventResponse: $0) }.sorted(by: { $0.id < $1.id })
+					
+					completion(helpEvents)
+				} else {
+					let helpEvents = helpEventsResponse.map { HelpEvent(helpEventResponse: $0) }.sorted(by: { $0.id < $1.id })
+					
+					completion(helpEvents)
+				}
+			}
 		} else {
-			return helpEventsResponse.map { HelpEvent(helpEventResponse: $0) }.sorted(by: { $0.id < $1.id })
+			fetchHelpEventsAF { fetchedHelpEvents in
+				if !fetchedHelpEvents.isEmpty {
+					let helpEvents = fetchedHelpEvents.map { HelpEvent(helpEventResponse: $0) }.sorted(by: { $0.id < $1.id })
+					
+					completion(helpEvents)
+				} else {
+					let helpEvents = helpEventsResponse.map { HelpEvent(helpEventResponse: $0) }.sorted(by: { $0.id < $1.id })
+					
+					completion(helpEvents)
+				}
+			}
 		}
 	}
 	
 	// MARK: – Init
 	private init() { }
 	
-	// MARK: – Fetching
-	func fetchHelpCategories() -> [HelpCategoryResponse] {
-		var helpCategories = [HelpCategoryResponse]()
-		
+	// MARK: – URLSession Fetching
+	func fetchHelpCategories(completion: @escaping ([HelpCategoryResponse]) -> Void) {
 		HelpCategoriesRequest().send { result in
 			switch result {
 			case .success(let helpCategoriesResponse):
-				helpCategories = helpCategoriesResponse
+				completion(helpCategoriesResponse)
 			case .failure(let error):
 				print(error.localizedDescription)
 				
-				helpCategories = []
+				completion([])
 			}
 		}
-		
-		return helpCategories
 	}
 	
-	private func fetchHelpEvents() -> [HelpEventResponse] {
-		var helpEvents = [HelpEventResponse]()
-		
+	private func fetchHelpEvents(completion: @escaping ([HelpEventResponse]) -> Void) {
 		HelpEventsRequest().send { result in
 			switch result {
 			case .success(let helpEventsResponse):
-				helpEvents = helpEventsResponse
+				completion(helpEventsResponse)
 			case .failure(let error):
 				print(error.localizedDescription)
 				
-				helpEvents = []
+				completion([])
 			}
 		}
-		
-		return helpEvents
+	}
+	
+	// MARK: – Alamofire Fetching
+	private func fetchHelpCategoriesAF(completion: @escaping ([HelpCategoryResponse]) -> Void) {
+		HelpCategoriesRequest().sendWithAF { result in
+			switch result {
+			case .success(let helpEventsResponse):
+				completion(helpEventsResponse)
+			case .failure(let error):
+				print(error.localizedDescription)
+				
+				completion([])
+			}
+		}
+	}
+	
+	private func fetchHelpEventsAF(completion: @escaping ([HelpEventResponse]) -> Void) {
+		HelpEventsRequest().send { result in
+			switch result {
+			case .success(let helpEventsResponse):
+				completion(helpEventsResponse)
+			case .failure(let error):
+				print(error.localizedDescription)
+				
+				completion([])
+			}
+		}
 	}
 	
 	// MARK: – Insert in Core Data
 	private func insertCDHelpCategories(into managedContext: NSManagedObjectContext) {
 		var helpCategories = [HelpCategoryResponse]()
 		
-		let fetchedHelpCategories = fetchHelpCategories()
-		if !fetchedHelpCategories.isEmpty {
-			helpCategories = fetchedHelpCategories
-		} else {
-			helpCategories = helpCategoriesResponse
+		fetchHelpCategories { fetchedHelpCategories in
+			if !fetchedHelpCategories.isEmpty {
+				helpCategories = fetchedHelpCategories.sorted(by: { $0.id < $1.id })
+			} else {
+				helpCategories = helpCategoriesResponse.sorted(by: { $0.id < $1.id })
+			}
 		}
 		
 		for helpCategoryResponse in helpCategories.sorted(by: { $0.id < $1.id }) {
@@ -185,11 +257,12 @@ struct DataManager {
 	private func insertCDHelpEvents(into managedContext: NSManagedObjectContext) {
 		var helpEvents = [HelpEventResponse]()
 		
-		let fetchedHelpEvents = fetchHelpEvents()
-		if !fetchedHelpEvents.isEmpty {
-			helpEvents = fetchedHelpEvents
-		} else {
-			helpEvents = helpEventsResponse
+		fetchHelpEvents { fetchedHelpEvents in
+			if !fetchedHelpEvents.isEmpty {
+				helpEvents = fetchedHelpEvents.sorted(by: { $0.id < $1.id })
+			} else {
+				helpEvents = helpEventsResponse.sorted(by: { $0.id < $1.id })
+			}
 		}
 		
 		for helpEventResponse in helpEvents.sorted(by: { $0.id < $1.id }) {
@@ -232,11 +305,12 @@ struct DataManager {
 	private func insertRSHelpCategories() {
 		var helpCategories = [HelpCategoryResponse]()
 		
-		let fetchedHelpCategories = fetchHelpCategories()
-		if !fetchedHelpCategories.isEmpty {
-			helpCategories = fetchedHelpCategories
-		} else {
-			helpCategories = helpCategoriesResponse
+		fetchHelpCategories { fetchedHelpCategories in
+			if !fetchedHelpCategories.isEmpty {
+				helpCategories = fetchedHelpCategories.sorted(by: { $0.id < $1.id })
+			} else {
+				helpCategories = helpCategoriesResponse.sorted(by: { $0.id < $1.id })
+			}
 		}
 		
 		for helpCategoryResponse in helpCategories.sorted(by: { $0.id < $1.id }) {
@@ -253,11 +327,12 @@ struct DataManager {
 	private func insertRSHelpEvents() {
 		var helpEvents = [HelpEventResponse]()
 		
-		let fetchedHelpEvents = fetchHelpEvents()
-		if !fetchedHelpEvents.isEmpty {
-			helpEvents = fetchedHelpEvents
-		} else {
-			helpEvents = helpEventsResponse
+		fetchHelpEvents { fetchedHelpEvents in
+			if !fetchedHelpEvents.isEmpty {
+				helpEvents = fetchedHelpEvents.sorted(by: { $0.id < $1.id })
+			} else {
+				helpEvents = helpEventsResponse.sorted(by: { $0.id < $1.id })
+			}
 		}
 		
 		for helpEventResponse in helpEvents.sorted(by: { $0.id < $1.id }) {

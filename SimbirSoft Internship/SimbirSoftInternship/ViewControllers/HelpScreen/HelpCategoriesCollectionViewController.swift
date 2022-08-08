@@ -26,6 +26,7 @@ final class HelpCategoriesViewController: UIViewController, UICollectionViewData
 		activityIndicatorView.style = .gray
 		activityIndicatorView.hidesWhenStopped = true
 		activityIndicatorView.center = view.center
+		activityIndicatorView.startAnimating()
 		return activityIndicatorView
 	}()
     
@@ -54,11 +55,12 @@ final class HelpCategoriesViewController: UIViewController, UICollectionViewData
 	
 	func fetchHelpCategories() {
 		DispatchQueue.global(qos: .background).async {
-			self.helpCategories = DataManager.shared.helpCategories
-			
-			DispatchQueue.main.async {
-				self.activityIndicatorView.stopAnimating()
-				self.collectionView.reloadData()
+			DataManager.shared.helpCategories { helpCategories in
+				DispatchQueue.main.async {
+					self.helpCategories = helpCategories
+					self.activityIndicatorView.stopAnimating()
+					self.collectionView.reloadData()
+				}
 			}
 		}
 	}

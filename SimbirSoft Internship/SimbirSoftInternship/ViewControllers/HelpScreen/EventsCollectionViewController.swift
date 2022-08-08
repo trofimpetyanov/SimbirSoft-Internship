@@ -65,11 +65,12 @@ final class EventsCollectionViewController: UICollectionViewController {
 	
 	func fetchHelpEvents() {
 		DispatchQueue.global(qos: .background).async {
-			self.helpEvents = DataManager.shared.helpEvents.filter { self.helpCategory.eventIds.contains($0.id) }
-			
-			DispatchQueue.main.async {
-				self.activityIndicatorView.stopAnimating()
-				self.collectionView.reloadData()
+			DataManager.shared.helpEvents { helpEvents in
+				DispatchQueue.main.async {
+					self.helpEvents = helpEvents.filter { self.helpCategory.eventIds.contains($0.id) }
+					self.activityIndicatorView.stopAnimating()
+					self.collectionView.reloadData()
+				}
 			}
 		}
 	}

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol APIRequest {
 	associatedtype Response
@@ -39,5 +40,22 @@ extension APIRequest where Response: Decodable {
 				print("Error fetch data from server: \(error), \(error.userInfo)")
 			}
 		}.resume()
+	}
+}
+
+extension APIRequest where Response: Decodable {
+	func sendWithAF(completion: @escaping (Result<Response, AFError>) -> Void) {
+		AF.request(request)
+			.validate()
+			.responseDecodable(of: Response.self) { (response) in
+				if let value = response.value {
+					completion(.success(value))
+				} else if let error = response.error {
+					completion(.failure(error))
+				} else {
+					print("Error fetch data from server")
+				}
+			}
+			.resume()
 	}
 }
